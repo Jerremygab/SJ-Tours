@@ -17,10 +17,11 @@ include 'components/connect.php';
     <header>
         <?php include 'components/header.php'; ?>
     </header>
-
-    <section>
-        <div class="seemore_container">
+    <br><br><br><br><br>
+    <section class="section">
+        <div class="seemore_container container">
             <div class="title_">Weekend Gateaway</div>
+            
             <div class="seemore_contents">
                 <?php
                     $select_places = $conn->prepare("SELECT * FROM `weekend_gateaway` ORDER BY RAND()"); 
@@ -32,24 +33,26 @@ include 'components/connect.php';
                 <div class="bg_container">
                     <div class="exp_place">
                         <?= $fetch_places['place_name']; ?>
-                    </div>
-                    <div class="more">
-                        <div class="left_side">
-                            <div class="exp_img_box">
-                            <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
-                                <img src="img/tourist/<?= $fetch_places['img1']; ?>" alt="">
-                            </a>
-                            </div>
-                            <div class="exp_links">
+                        <div class="exp_links">
                                 <a href="<?= $fetch_places['fb_link']; ?>" target="_blank"><i class='bx bxl-facebook-circle icons_'></i></a>
                                 <a href="<?= $fetch_places['web_link']; ?>" target="_blank"><i class='bx bx-globe icons_'></i></a>
                                 <!-- <a href="<?= $fetch_places['gmail_link']; ?>" target="_blank"><i class='bx bxs-envelope icons_'></i></a> -->
                                 <!-- <a href="<?= $fetch_places['phone_link']; ?>" target="_blank"><i class='bx bxs-phone icons_'></i></a> -->
                                 <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
                             </div>
+                    </div>
+                    <div class="more">
+                        <div class="left_side">
+                            <div class="exp_img_box">
+                                <img src="img/tourist/<?= $fetch_places['img1']; ?>" alt="">
+                            </div>
                         </div>
                         <div class="right_side">
                             <p><?= $fetch_places['description']; ?></p>
+                            
+                            <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
+                                <button class="btn">Visit Now</button>
+                            </a>
                         </div>
                     </div>
                 </div>

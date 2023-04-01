@@ -1,9 +1,7 @@
 const header = document.querySelector('header');
-const whiteNav = document.querySelectorAll('#head_');
 
 window.addEventListener('scroll', function(){
     header.classList.toggle('sticky', window.scrollY > 0);
-    whiteNav.classList.toggle('white', window.scrollY > 0);
 });
 
 function subImg1(){
@@ -59,6 +57,16 @@ function back2Top() {
   document.documentElement.scrollTop = 0;
 }
 
+var count = 0;
+var btn = document.getElementById("btn");
+var disp = document.getElementById("display");
+
+btn.onclick = function () {
+    count++;
+    disp.innerHTML = count;
+}
+
+
 // Get the modal
 const modal = document.getElementById("myModal");
 
@@ -84,3 +92,9 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+window.scroll({
+  top: 2500, 
+  left: 0, 
+  behavior: 'smooth'
+});

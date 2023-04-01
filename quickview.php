@@ -24,7 +24,7 @@ include 'components/connect.php';
 <br>
 <br>
 <br>
-<section class="quick-view">
+<section class="quick_view section" id="quick-view" >
 
 <?php
      $pid = $_GET['pid'];
@@ -73,6 +73,5 @@ include 'components/connect.php';
 <?php include 'components/footer.php'; ?>
 
 <script src="js/script.js"></script>
-<script src="http://thecodeplayer.com/uploads/js/prefixfree.js" type="text/javascript"></script>
 </body>
 </html>

@@ -19,8 +19,8 @@ include 'components/connect.php';
         <?php include 'components/header.php'; ?>
     </header>
     
-    <section class="travel_info" id="travel_info">
-        <div class="travel_container">
+    <section class="travel_info section" id="travel_info">
+        <div class="travel_container container">
             <div class="title_">
                 Travel Information
             </div>
