@@ -86,43 +86,7 @@ if(isset($_POST['send'])){
         <div class="embedded_map">
             <div class="title_">We're Located at</div>
             <br><br>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.944962128064!2d121.37187589999999!3d13.661110599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd3afcd468b6e5%3A0xeea7fc120a879422!2sLa%20Luz%20Beach%20Resort!5e0!3m2!1sen!2sph!4v1679582685253!5m2!1sen!2sph" width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>         
+            <iframe src="<?= $fetch_places['embedded_map']; ?>" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="gmap"></iframe>
         </div>  
-         <div class="exp_container">
-            <div class="title_">Similar Places</div>
-            <br><br>
-            <div class="what_to_do">
-                <div class="exp_contents_">
-                    <?php
-                        $select_places = $conn->prepare("SELECT * FROM `weekend_gateaway` ORDER BY RAND() LIMIT 5"); 
-                        $select_places->execute();
-                        if($select_places->rowCount() > 0){
-                        while($fetch_places = $select_places->fetch(PDO::FETCH_ASSOC)){
-                    ?> 
-                    <div class="weekend_gateaway">
-                        <div class="exp_img_box">
-                        <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
-                            <img src="img/tourist/<?= $fetch_places['img1']; ?>" alt="">
-                        </a>
-                        </div>
-                        <div class="exp_place">
-                            <b><?= $fetch_places['place_name']; ?></b>
-                        </div>
-                        <div class="exp_links">
-                            <a href="<?= $fetch_places['fb_link']; ?>" target="_blank"><i class='bx bxl-facebook-circle icons_'></i></a>
-                            <a href="<?= $fetch_places['web_link']; ?>" target="_blank"><i class='bx bx-globe icons_'></i></a>
-                            <!-- <a href="<?= $fetch_places['gmail_link']; ?>" target="_blank"><i class='bx bxs-envelope icons_'></i></a> -->
-                            <!-- <a href="<?= $fetch_places['phone_link']; ?>" target="_blank"><i class='bx bxs-phone icons_'></i></a> -->
-                            <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
-                        </div>
-                    </div>
-                    <?php
-                    }
-                    }else{
-                        echo '<p class="empty">No places found!</p>';
-                    }
-                    ?>
-                </div>
-            </div>   
-        </div>
       </div>
+

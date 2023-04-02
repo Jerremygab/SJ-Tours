@@ -374,7 +374,14 @@ header.sticky{
     font-size: var(--h3-font-size);
     color: var(--text-color);
 }
-
+.row .exp_links{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+.row .exp_links .icons_{
+    font-size: 2.5rem;
+}
 .contact_ .column_ {
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -517,7 +524,10 @@ textarea {
 }
 
 iframe{
+    width: 100%;
+    height: 600px;
     border-radius: 5px;
+    border: 0;
 }
 .testimonials_container{
     display: grid;
