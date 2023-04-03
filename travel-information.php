@@ -18,7 +18,7 @@ include 'components/connect.php';
     <header id="header">
         <?php include 'components/header.php'; ?>
     </header>
-    
+    <br><br>
     <section class="travel_info section" id="travel_info">
         <div class="travel_container container">
             <div class="title_">
@@ -105,7 +105,7 @@ include 'components/connect.php';
                             <br>
                             <p>Fares/Fees/Rates:</p>
                             <li>EDSA, Cubao to San Juan bus fare: (Alps the Bus only): PhP188.00 </li>
-                            <li> Cubao to Lipa bus fare: PhP132.00</li>
+                            <li>Cubao to Lipa bus fare: PhP132.00</li>
                             <li>Buendia to Lipa bus fare: PhP124.00</li>
                             <li>Bus fare from Cubao to Lipa City: Php132.00</li>
                             <li>Lipa to San Juan van fare: PhP70.00</li>

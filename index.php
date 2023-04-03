@@ -95,7 +95,7 @@ include 'components/connect.php';
             <div class="what_to_do">
                 <div class="exp_category">
                     <h4>Weekend Gateaway</h4>
-                    <a href="see-more.php">See more</a>
+                    <a href="wg-see-more.php">See more</a>
                 </div>
                 <div class="exp_contents_">
                     <?php
@@ -106,9 +106,8 @@ include 'components/connect.php';
                     ?> 
                     <div class="weekend_gateaway">
                         <div class="exp_img_box">
-                        <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
-                            <img src="img/tourist/<?= $fetch_places['img1']; ?>" >
-                            
+                        <a href="quickview.php?pid=<?= $fetch_places['id']; ?>" target="_blank">
+                            <img id="<?= $fetch_places['id']; ?>" tbl="weekend_gateaway" thumbnail src="img/tourist/<?= $fetch_places['img1']; ?>" >
                         </a>
                         </div>
                         <div class="exp_place">
@@ -123,7 +122,9 @@ include 'components/connect.php';
                                 <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
                             </div>
                             <div class="views_">
-                                <span id="display">0</span> 
+
+                                <span id="display_weekend_gateaway_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?></span> 
+
                                 <svg class="eye"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="eye"><path d="M31.299 15.25C28.15 9.8 22.289 6.414 16 6.414S3.849 9.8.701 15.25a1.497 1.497 0 0 0 0 1.5C3.85 22.2 9.711 25.586 16 25.586S28.151 22.2 31.299 16.75a1.497 1.497 0 0 0 0-1.5zM16 22.586A14.712 14.712 0 0 1 3.763 16c2.7-4.084 7.31-6.586 12.237-6.586S25.537 11.916 28.237 16A14.712 14.712 0 0 1 16 22.586z"></path><path d="M16 10.054c-3.278 0-5.946 2.668-5.946 5.946s2.668 5.946 5.946 5.946 5.946-2.668 5.946-5.946-2.668-5.946-5.946-5.946zm0 8.892c-1.625 0-2.946-1.321-2.946-2.946s1.321-2.946 2.946-2.946 2.946 1.321 2.946 2.946-1.321 2.946-2.946 2.946z"></path></svg>
                             </div>
                         </div>
@@ -139,7 +140,7 @@ include 'components/connect.php';
             <div class="what_to_do">
                 <div class="exp_category">
                     <h4>Gastronomic Experience</h4>
-                    <a href="#">See more</a>
+                    <a href="gs-see-more.php">See more</a>
                 </div>
                 <div class="exp_contents_">
                     <?php
@@ -151,7 +152,7 @@ include 'components/connect.php';
                     <div class="weekend_gateaway">
                         <div class="exp_img_box">
                         <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
-                            <img src="img/tourist/<?= $fetch_places['img1']; ?>" alt="">
+                            <img id="<?= $fetch_places['id']; ?>" tbl="gastronomic_exp" thumbnail src="img/tourist/<?= $fetch_places['img1']; ?>" alt="">
                         </a>
                         </div>
                         <div class="exp_place">
@@ -163,6 +164,10 @@ include 'components/connect.php';
                             <!-- <a href="<?= $fetch_places['gmail_link']; ?>" target="_blank"><i class='bx bxs-envelope icons_'></i></a> -->
                             <!-- <a href="<?= $fetch_places['phone_link']; ?>" target="_blank"><i class='bx bxs-phone icons_'></i></a> -->
                             <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
+                        </div>
+                        <div class="views_">
+                            <span id="display_gastronomic_exp_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?></span> 
+                            <svg class="eye"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="eye"><path d="M31.299 15.25C28.15 9.8 22.289 6.414 16 6.414S3.849 9.8.701 15.25a1.497 1.497 0 0 0 0 1.5C3.85 22.2 9.711 25.586 16 25.586S28.151 22.2 31.299 16.75a1.497 1.497 0 0 0 0-1.5zM16 22.586A14.712 14.712 0 0 1 3.763 16c2.7-4.084 7.31-6.586 12.237-6.586S25.537 11.916 28.237 16A14.712 14.712 0 0 1 16 22.586z"></path><path d="M16 10.054c-3.278 0-5.946 2.668-5.946 5.946s2.668 5.946 5.946 5.946 5.946-2.668 5.946-5.946-2.668-5.946-5.946-5.946zm0 8.892c-1.625 0-2.946-1.321-2.946-2.946s1.321-2.946 2.946-2.946 2.946 1.321 2.946 2.946-1.321 2.946-2.946 2.946z"></path></svg>
                         </div>
                     </div>
                     <?php
@@ -188,7 +193,7 @@ include 'components/connect.php';
                     <div class="weekend_gateaway">
                         <div class="exp_img_box">
                         <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
-                            <img src="img/tourist/<?= $fetch_places['img1']; ?>" alt="">
+                            <img id="<?= $fetch_places['id']; ?>" tbl="attractions" thumbnail src="img/tourist/<?= $fetch_places['img1']; ?>" alt="">
                         </a>
                         </div>
                         <div class="exp_place">
@@ -200,6 +205,10 @@ include 'components/connect.php';
                             <!-- <a href="<?= $fetch_places['gmail_link']; ?>" target="_blank"><i class='bx bxs-envelope icons_'></i></a> -->
                             <!-- <a href="<?= $fetch_places['phone_link']; ?>" target="_blank"><i class='bx bxs-phone icons_'></i></a> -->
                             <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
+                        </div>
+                        <div class="views_">
+                        <span id="display_attractions_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?></span> 
+                            <svg class="eye"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="eye"><path d="M31.299 15.25C28.15 9.8 22.289 6.414 16 6.414S3.849 9.8.701 15.25a1.497 1.497 0 0 0 0 1.5C3.85 22.2 9.711 25.586 16 25.586S28.151 22.2 31.299 16.75a1.497 1.497 0 0 0 0-1.5zM16 22.586A14.712 14.712 0 0 1 3.763 16c2.7-4.084 7.31-6.586 12.237-6.586S25.537 11.916 28.237 16A14.712 14.712 0 0 1 16 22.586z"></path><path d="M16 10.054c-3.278 0-5.946 2.668-5.946 5.946s2.668 5.946 5.946 5.946 5.946-2.668 5.946-5.946-2.668-5.946-5.946-5.946zm0 8.892c-1.625 0-2.946-1.321-2.946-2.946s1.321-2.946 2.946-2.946 2.946 1.321 2.946 2.946-1.321 2.946-2.946 2.946z"></path></svg>
                         </div>
                     </div>
                     <?php
@@ -225,7 +234,7 @@ include 'components/connect.php';
                     <div class="weekend_gateaway">
                         <div class="exp_img_box">
                         <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
-                            <img src="img/tourist/<?= $fetch_places['img1']; ?>" alt="">
+                            <img id="<?= $fetch_places['id']; ?>" tbl="souvenirs" thumbnail src="img/tourist/<?= $fetch_places['img1']; ?>" alt="">
                         </a>
                         </div>
                         <div class="exp_place">
@@ -237,6 +246,10 @@ include 'components/connect.php';
                             <!-- <a href="<?= $fetch_places['gmail_link']; ?>" target="_blank"><i class='bx bxs-envelope icons_'></i></a> -->
                             <!-- <a href="<?= $fetch_places['phone_link']; ?>" target="_blank"><i class='bx bxs-phone icons_'></i></a> -->
                             <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
+                        </div>
+                        <div class="views_">
+                            <span id="display_souvenirs_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?></span> 
+                            <svg class="eye"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="eye"><path d="M31.299 15.25C28.15 9.8 22.289 6.414 16 6.414S3.849 9.8.701 15.25a1.497 1.497 0 0 0 0 1.5C3.85 22.2 9.711 25.586 16 25.586S28.151 22.2 31.299 16.75a1.497 1.497 0 0 0 0-1.5zM16 22.586A14.712 14.712 0 0 1 3.763 16c2.7-4.084 7.31-6.586 12.237-6.586S25.537 11.916 28.237 16A14.712 14.712 0 0 1 16 22.586z"></path><path d="M16 10.054c-3.278 0-5.946 2.668-5.946 5.946s2.668 5.946 5.946 5.946 5.946-2.668 5.946-5.946-2.668-5.946-5.946-5.946zm0 8.892c-1.625 0-2.946-1.321-2.946-2.946s1.321-2.946 2.946-2.946 2.946 1.321 2.946 2.946-1.321 2.946-2.946 2.946z"></path></svg>
                         </div>
                     </div>
                     <?php
@@ -328,15 +341,20 @@ include 'components/connect.php';
     <div class="instagram_container container">
         <h1>@juanderfulsanjuan</h1>
         <div class="instagram_content">
-            <img src="img/home_bg.jpg" alt="kalapate">
-            <img src="img/home_bg.jpg" alt="kalapate">
-            <img src="img/home_bg.jpg" alt="kalapate">
-            <img src="img/home_bg.jpg" alt="kalapate">
-            <img src="img/home_bg.jpg" alt="kalapate">
-            <img src="img/home_bg.jpg" alt="kalapate">
-            <img src="img/home_bg.jpg" alt="kalapate">
-            <img src="img/home_bg.jpg" alt="kalapate">
-        </div>
+            <?php
+                $select_places = $conn->prepare("SELECT * FROM `ig_post` ORDER BY RAND() LIMIT 8"); 
+                $select_places->execute();
+                if($select_places->rowCount() > 0){
+                while($fetch_places = $select_places->fetch(PDO::FETCH_ASSOC)){
+            ?> 
+            <img src="img/ig<?= $fetch_places['img']; ?>">
+            <?php
+            }
+            }else{
+                echo '<p class="empty">No places found!</p>';
+            }
+            ?>
+            </div>
         <div class="testimonials_footer">
             <br>
             <p>View more stories.</p>
@@ -350,6 +368,7 @@ include 'components/connect.php';
 <?php include 'components/footer.php'; ?>
 
     <script src="js/script.js"></script>
+    <script src="js/viewCount.js"></script>
 </body>
 </html>
 

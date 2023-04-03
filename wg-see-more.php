@@ -17,7 +17,7 @@ include 'components/connect.php';
     <header>
         <?php include 'components/header.php'; ?>
     </header>
-    <br><br><br><br><br>
+    <br><br>
     <section class="section">
         <div class="seemore_container container">
             <div class="title_">Weekend Gateaway</div>

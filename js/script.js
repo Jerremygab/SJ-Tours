@@ -57,7 +57,7 @@ function back2Top() {
   document.documentElement.scrollTop = 0;
 }
 
-var count = 0;
+/* var count = 0;
 var btn = document.getElementById("btn");
 var disp = document.getElementById("display");
 
@@ -65,9 +65,9 @@ btn.onclick = function () {
     count++;
     disp.innerHTML = count;
 }
+ */
 
-
-// Get the modal
+/* // Get the modal
 const modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
@@ -97,4 +97,4 @@ window.scroll({
   top: 2500, 
   left: 0, 
   behavior: 'smooth'
-});
+}); */

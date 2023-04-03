@@ -3,8 +3,8 @@
     <p class="foot_">© juanderfulsanjuan.com <?= date('Y'); ?></p>
 
     <ul class="footer_nav foot_">
-        <li><a href="#">Things to do</a></li>
-        <li><a href="#">Places to go</a></li>
+        <li><a href="index.php#experience">Things to do</a></li>
+        <li><a href="index.php#experience">Places to go</a></li>
         <li><a href="travel-information.php">Travel Information</a></li>
         <li><a href="#" onclick="back2Top()">Back to top</a></li>
     </ul>

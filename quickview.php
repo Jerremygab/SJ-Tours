@@ -35,7 +35,7 @@ include 'components/connect.php';
    ?>
 
    <div class="form">
-      <h1 class="title_">Visit San Juan</h1>
+      <h1 class="title_">Featured Photos</h1>
         <div class="row">
             <div class="img_container">
                 <div class="main_image">
@@ -53,14 +53,26 @@ include 'components/connect.php';
                 <div class="name"><?= $fetch_places['place_name']; ?></div>
                 <div class="details"><?= $fetch_places['location']; ?></div>
                 <div class="details"><?= $fetch_places['description']; ?></div>
+                <div class="amenities">
+                    <h3>Property Amenities</h3>
+                    <ul>
+                        <?= $fetch_places['property_amenities']; ?>
+                    </ul>
+                    <h3>Rooms Features </h3>
+                    <ul>
+                        
+                    </ul>
+                    <h3>Property Amenities</h3>
+                    <ul>
+                        
+                    </ul>
+                </div>
             </div>
+
             <div class="exp_links">
                 <a href="<?= $fetch_places['fb_link']; ?>" target="_blank"><i class='bx bxl-facebook-square icons_'></i></a>
                 <a href="<?= $fetch_places['web_link']; ?>" target="_blank"><i class='bx bx-globe icons_'></i></a>
-                <!-- <a href="<?= $fetch_places['gmail_link']; ?>" target="_blank"><i class='bx bxs-envelope icons_'></i></a> -->
-                <!-- <a href="<?= $fetch_places['phone_link']; ?>" target="_blank"><i class='bx bxs-phone icons_'></i></a> -->
                 <a href="<?= $fetch_places['ig_link']; ?>" target="_blank"><i class='bx bxl-instagram icons_'></i></a>
-                <a href="" target="_blank"><i class='bx bxl-trip-advisor icons_'></i></a>
             </div>
         </div> 
 

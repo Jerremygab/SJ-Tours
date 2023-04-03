@@ -374,6 +374,14 @@ header.sticky{
     font-size: var(--h3-font-size);
     color: var(--text-color);
 }
+
+.amenities ul  {
+    list-style-type: '\2713';
+}
+.amenities ul li:before {
+    content: '✓';
+}
+
 .row .exp_links{
     display: flex;
     justify-content: center;
