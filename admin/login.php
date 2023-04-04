@@ -16,8 +16,11 @@ include '../components/connect.php';
     
 </head>
 <body>
+<i class='bx bx-key icons_' onclick="openModal()"></i>
     <section class="login_" id="login">
+     
         <div class="login_container">
+        <i class='bx bx-x icons_' onclick="exitModal()"></i>
             <div></div>
             <div class="login_content">
                 <i class='bx bx-key icons_'></i>
@@ -50,6 +53,13 @@ include '../components/connect.php';
         window.alert('Invalid Username and Password');
     }
 
+    }
+
+    function openModal(){
+        document.getElementById('login').style.display = "block";
+    }
+    function exitModal(){
+        document.getElementById('login').style.display = "none";
     }
 
 </script>

@@ -57,6 +57,27 @@ function back2Top() {
   document.documentElement.scrollTop = 0;
 }
 
+var labelID;
+
+$('label').click(function() {
+  labelID = $(this).attr('for');
+  $('#' + labelID).toggleClass('active');
+}); 
+
+
+
+
+
+/* function openModalBox(){
+  var modal = $('.modal, #mask');
+$('.open-modal').on('click', function() {
+ modal.fadeIn(300);
+});
+$('.close-modal, #mask').on('click', function() {
+ modal.fadeOut(800);
+});
+}
+openModalBox(); */
 /* var count = 0;
 var btn = document.getElementById("btn");
 var disp = document.getElementById("display");

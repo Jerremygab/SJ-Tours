@@ -74,7 +74,9 @@ body{
     background: var(--bg-color);
     color: var(--text-color);
 } 
-
+#login {
+    display:none;
+}
 .login_{
     position: relative;
     width: 100%;
@@ -83,7 +85,6 @@ body{
     background-size: cover;
     background-position: center;
     align-items: center;
-
 }
 
 .login_container{
@@ -95,6 +96,7 @@ body{
     height: 100vh;
     background-color: #000000ac;
     padding: 10rem;
+    
 }
 .login_content{
     background-color: var(--modal-color);
@@ -141,6 +143,7 @@ input[type='submit']:hover{
     font-size: 72px;
     text-align: center;
     color:var(--primary-color);
+    cursor: pointer;
 }
 
 .dashboard_container{

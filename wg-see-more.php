@@ -51,7 +51,7 @@ include 'components/connect.php';
                             <p><?= $fetch_places['description']; ?></p>
                             
                             <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
-                                <button class="btn">Visit Now</button>
+                                <button class="visit_btn">Visit Now</button>
                             </a>
                         </div>
                     </div>
