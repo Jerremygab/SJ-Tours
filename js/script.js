@@ -21,6 +21,7 @@ function subImg2(){
 function subImg3(){
 
   let subImg3 = document.querySelector('#sub3');
+  
   src = subImg3.getAttribute('src');
   document.getElementById("main_img").src=src;
 

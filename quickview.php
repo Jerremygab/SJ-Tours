@@ -24,6 +24,8 @@ include 'components/connect.php';
 <br>
 <br>
 <br>
+<br>
+<br>
 <section class="quick_view section" id="quick-view" >
 
 <?php
@@ -53,19 +55,25 @@ include 'components/connect.php';
                 <div class="name"><?= $fetch_places['place_name']; ?></div>
                 <div class="details"><?= $fetch_places['location']; ?></div>
                 <div class="details"><?= $fetch_places['description']; ?></div>
+                <div class="details">Rate starts at: <b>PHP <?= $fetch_places['rate']; ?>.00</b></div>
+                
+
                 <div class="amenities">
                     <h3>Property Amenities</h3>
-                    <ul>
+                    <ul class="li_grid">
                         <?= $fetch_places['property_amenities']; ?>
                     </ul>
+                    <hr>
                     <h3>Rooms Features </h3>
-                    <ul>
-                        
+                    <ul class="li_grid">
+                        <?= $fetch_places['room_features']; ?>
                     </ul>
-                    <h3>Property Amenities</h3>
-                    <ul>
-                        
+                    <hr>
+                    <h3>Room Types</h3>
+                    <ul class="li_grid">
+                        <?= $fetch_places['room_types']; ?>
                     </ul>
+                    <hr>
                 </div>
             </div>
 
@@ -76,13 +84,18 @@ include 'components/connect.php';
             </div>
         </div> 
 
-      <br><br><br><br>
+      <br>
       <div id="contact"></div>
       <?php include 'contact.php'; ?>
+
       <div class="exp_container">
             <div class="title_">Similar Places</div>
-            <br><br>
+            <br>
             <div class="what_to_do">
+                <div class="exp_category">
+                    <h4></h4>
+                    <a href="wg-see-more.php">See more</a>
+                </div>
                 <div class="exp_contents_">
                     <?php
                         $select_places = $conn->prepare("SELECT * FROM `weekend_gateaway` ORDER BY RAND() LIMIT 5"); 
@@ -93,18 +106,22 @@ include 'components/connect.php';
                     <div class="weekend_gateaway">
                         <div class="exp_img_box">
                         <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
-                            <img src="img/tourist/<?= $fetch_places['img1']; ?>" alt="">
+                            <img id="<?= $fetch_places['id']; ?>" tbl="weekend_gateaway" thumbnail src="img/tourist/<?= $fetch_places['img1']; ?>" >
                         </a>
                         </div>
                         <div class="exp_place">
                             <b><?= $fetch_places['place_name']; ?></b>
                         </div>
-                        <div class="exp_links">
-                            <a href="<?= $fetch_places['fb_link']; ?>" target="_blank"><i class='bx bxl-facebook-circle icons_'></i></a>
-                            <a href="<?= $fetch_places['web_link']; ?>" target="_blank"><i class='bx bx-globe icons_'></i></a>
-                            <!-- <a href="<?= $fetch_places['gmail_link']; ?>" target="_blank"><i class='bx bxs-envelope icons_'></i></a> -->
-                            <!-- <a href="<?= $fetch_places['phone_link']; ?>" target="_blank"><i class='bx bxs-phone icons_'></i></a> -->
-                            <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
+                        <div class="exp_icons">
+                            <div class="exp_links">
+                                <a href="<?= $fetch_places['fb_link']; ?>" target="_blank"><i class='bx bxl-facebook-circle icons_'></i></a>
+                                <a href="<?= $fetch_places['web_link']; ?>" target="_blank"><i class='bx bx-globe icons_'></i></a>
+                                <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
+                            </div>
+                            <div class="view_count">
+                                <p id="display_weekend_gateaway_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?></p>    
+                                <i class="uil uil-eye icons_"></i>                          
+                            </div>
                         </div>
                     </div>
                     <?php
@@ -114,11 +131,9 @@ include 'components/connect.php';
                     }
                     ?>
                 </div>
-            </div>   
+            </div>  
         </div>
     </div>
-    </div>
-   </div>
    
    <?php
       }
@@ -130,5 +145,6 @@ include 'components/connect.php';
 <?php include 'components/footer.php'; ?>
 
 <script src="js/script.js"></script>
+<script src="js/viewCount.js"></script>
 </body>
 </html>

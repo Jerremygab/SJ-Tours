@@ -18,6 +18,8 @@ include 'components/connect.php';
         <?php include 'components/header.php'; ?>
     </header>
     <br><br>
+    <br><br>
+    <br><br>
     <section class="section">
         <div class="seemore_container container">
             <div class="title_">Gastronomic Experience</div>
@@ -68,5 +70,6 @@ include 'components/connect.php';
     <?php include 'components/footer.php'; ?>
 
     <script src="js/script.js"></script>
+    <script src="js/viewCount.js"></script>
 </body>
 </html>

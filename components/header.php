@@ -8,6 +8,6 @@
             <li><a href="index.php#experience">Things to do</a></li>
             <li><a href="index.php#experience">Places to go</a></li>
             <li><a href="travel-information.php">Travel Information</a></li>
-            <li><a href="search_page.php">search</a></li>
+            <li><a href="search.php">search</a></li>
         </ul>
     

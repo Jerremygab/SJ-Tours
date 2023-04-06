@@ -1,4 +1,5 @@
 const thumbnails = document.querySelectorAll('img[thumbnail]');
+const button = document.querySelectorAll('button[button]');
 
 const addViewCount = (id, tbl)=> {
     const xhr = new XMLHttpRequest();
@@ -20,6 +21,12 @@ const addViewCount = (id, tbl)=> {
 }
 
 thumbnails.forEach((img)=>{
+    const tbl = img.getAttribute('tbl');
+    const id = img.getAttribute('id');
+
+    img.addEventListener('click', ()=> addViewCount(id, tbl));
+})
+button.forEach((img)=>{
     const tbl = img.getAttribute('tbl');
     const id = img.getAttribute('id');
 

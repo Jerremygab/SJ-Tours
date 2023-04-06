@@ -18,6 +18,8 @@ include 'components/connect.php';
         <?php include 'components/header.php'; ?>
     </header>
     <br><br>
+    <br><br>
+    <br><br>
     <section class="section">
         <div class="seemore_container container">
             <div class="title_">Weekend Gateaway</div>
@@ -48,10 +50,13 @@ include 'components/connect.php';
                             </div>
                         </div>
                         <div class="right_side">
-                            <p><?= $fetch_places['description']; ?></p>
-                            
+
+                            <p><?= substr($fetch_places['description'], 0, 260); ?>...</p><br>
+                            <div class="details">Rate starts at: <br><b>PHP <?= $fetch_places['rate']; ?>.00</b></div>
+                            <p id="display_weekend_gateaway_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?></p> 
+                            <div class="details" id="display_weekend_gateaway_<?= $fetch_places['id']; ?>">Total Views: <br><b><?= $fetch_places['views']; ?> <i class="uil uil-eye icons_"></b></i></div>
                             <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
-                                <button class="visit_btn">Visit Now</button>
+                                <button id="<?= $fetch_places['id']; ?>" tbl="weekend_gateaway" button class="visit_btn">Visit Now</button>
                             </a>
                         </div>
                     </div>
@@ -68,6 +73,7 @@ include 'components/connect.php';
     <?php include 'components/footer.php'; ?>
 
     <script src="js/script.js"></script>
+    <script src="js/viewCount.js"></script>
 </body>
 </html>
       

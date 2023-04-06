@@ -117,21 +117,8 @@ include 'components/connect.php';
                             <div class="exp_links">
                                 <a href="<?= $fetch_places['fb_link']; ?>" target="_blank"><i class='bx bxl-facebook-circle icons_'></i></a>
                                 <a href="<?= $fetch_places['web_link']; ?>" target="_blank"><i class='bx bx-globe icons_'></i></a>
-                                <!-- <i class='bx bxs-phone icons_' for="modal-toggle"></i> -->
-                                <a href="#modal-one"><i class='bx bxs-envelope icons_' onclick="modal()"></i></a>
                                 <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
                             </div>
-                                <!-- <div class="modal-container">
-                                    <input id="modal-toggle" type="checkbox">
-                                        <label class="modal-btn" for="modal-toggle">Click me</label> 
-                                        <label class="modal-backdrop" for="modal-toggle"></label>
-                                    <div class="modal-content">
-                                        <label class="modal-close" for="modal-toggle">&#x2715;</label>
-                                        <h2>Modal title</h2><hr />
-                                        <p>Hello from inside the modal!</p> 
-                                        <label class="modal-content-btn" for="modal-toggle">OK</label>   
-                                    </div>          
-                                </div>  --> 
                             <div class="view_count">
                                 <p id="display_weekend_gateaway_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?></p>    
                                 <i class="uil uil-eye icons_"></i>                          

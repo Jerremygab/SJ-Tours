@@ -19,7 +19,8 @@ include 'components/connect.php';
     <header>
         <?php include 'components/header.php' ?>
     </header>
-    
+    <br><br><br>
+    <br><br><br>
     <section class="section">
         <div class="map_container container">
             <div class="title_">San Juan Batangas</div>
