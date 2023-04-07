@@ -53,8 +53,10 @@ include 'components/connect.php';
 
                             <p><?= substr($fetch_places['description'], 0, 260); ?>...</p><br>
                             <div class="details">Rate starts at: <br><b>PHP <?= $fetch_places['rate']; ?>.00</b></div>
-                            <p id="display_weekend_gateaway_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?></p> 
-                            <div class="details" id="display_weekend_gateaway_<?= $fetch_places['id']; ?>">Total Views: <br><b><?= $fetch_places['views']; ?> <i class="uil uil-eye icons_"></b></i></div>
+                            <div class="details">
+                                Total views:
+                                <p id="display_weekend_gateaway_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?> <i class="uil uil-eye icons_"></i></p> 
+                            </div>
                             <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
                                 <button id="<?= $fetch_places['id']; ?>" tbl="weekend_gateaway" button class="visit_btn">Visit Now</button>
                             </a>

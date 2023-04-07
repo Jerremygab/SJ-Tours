@@ -26,7 +26,7 @@ include 'components/connect.php'
             <div class="search_bar">
                 <form action="" method="post" id="search_form">
                     <input type="textbox" name="search_box" id="search-box" placeholder="Search here">
-                    <button type="submit" class="bx bx-search" name="search_btn"></button>
+                    <button type="submit" class="bx bx-search icons_" name="search_btn"></button>
                 </form>
             </div>
             <div class="what_to_do">
