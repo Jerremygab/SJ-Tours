@@ -476,8 +476,8 @@ form {
     width: 45%;
 }
 
-input[type='text'], [type='email'], select, textarea {
-    background: none;
+#contact_form input[type='text'], [type='email'], select, textarea {
+    background-color: none;
     border: none;
     border-bottom: solid 2px var(--text-color);
     color: #474544;
@@ -500,7 +500,7 @@ input[type='text'], [type='email'], select, textarea {
     transition: all 0.3s;
 }
 
-input[type='text']:focus, [type='email']:focus, textarea:focus {
+#contact_form input[type='text']:focus, [type='email']:focus, textarea:focus {
     outline: none;
     padding: 0 0 0.875em 0;
 }
@@ -772,6 +772,30 @@ table td{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#search_form{
+    display: flex;
+    gap: 5px;
+}
+#search_form input{
+    line-height: normal;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.search_bar .icons_{
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+    padding: 1rem;
+}
+.search_bar .icons_{
+    padding: 8px;
+    font-size: 1rem;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+}
 
 
 
