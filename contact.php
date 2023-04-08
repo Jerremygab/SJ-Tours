@@ -5,6 +5,10 @@ include 'components/connect.php';
 
 if(isset($_POST['send'])){
 
+   $pid = $_POST['place_id'];
+   $pid = filter_var($pid, FILTER_SANITIZE_STRING);
+   $placename = $_POST['place_name'];
+   $placename = filter_var($placename, FILTER_SANITIZE_STRING);
    $name = $_POST['fullname'];
    $name = filter_var($name, FILTER_SANITIZE_STRING);
    $email = $_POST['email'];
@@ -14,15 +18,15 @@ if(isset($_POST['send'])){
    $msg = $_POST['message'];
    $msg = filter_var($msg, FILTER_SANITIZE_STRING);
 
-   $select_message = $conn->prepare("SELECT * FROM `contact_form` WHERE fullname = ? AND email = ? AND number = ? AND message = ?");
-   $select_message->execute([$name, $email, $number, $msg]);
+   $select_message = $conn->prepare("SELECT * FROM `contact_form` WHERE place_id = ? AND place_name = ? AND fullname = ? AND email = ? AND number = ? AND message = ?");
+   $select_message->execute([ $pid, $placename,$name, $email, $number, $msg]);
 
    if($select_message->rowCount() > 0){
       $message[] = 'Already sent message!';
    }else{
 
-      $insert_message = $conn->prepare("INSERT INTO `contact_form`( fullname, email, number, message) VALUES(?,?,?,?)");
-      $insert_message->execute([ $name, $email, $number, $msg]);
+      $insert_message = $conn->prepare("INSERT INTO `contact_form`(place_id, place_name, fullname, email, number, message) VALUES(?,?,?,?,?,?)");
+      $insert_message->execute([ $pid, $placename, $name, $email, $number, $msg]);
 
       $message[] = 'Sent message successfully!';
 
@@ -36,7 +40,7 @@ if(isset($_POST['send'])){
 <div class="contact_" id="contact">
          <div class="title_">Get in touch</div>
          
-         <div class="contact_container column_">
+         <div class="contact_container contact_grid">
             <div class="contact_content row_">
                <br><br>
                <br><br>
@@ -69,8 +73,8 @@ if(isset($_POST['send'])){
                     <input type="email" placeholder="My e-mail is" name="email" id="email_input" required>
                   </div>
                   <div class="telephone">
-                    <label for="name"></label>
-                    <input type="text" placeholder="My number is" name="number" id="telephone_input" required>
+                    <label for="number"></label>
+                    <input type="number" placeholder="My number is" name="number" id="telephone_input" required maxlength="11">
                   </div>
                   <div class="message">
                     <label for="message"></label>
@@ -78,8 +82,13 @@ if(isset($_POST['send'])){
                   </div>
                   <div class="submit">
                     <input type="submit" name="send" value="Send Message" id="form_button" onclick="messageSent()"/>
-                    
                   </div>
+
+                  <div style="display: none;">
+                    <textarea name="place_name" cols="30" rows="5"><?= $fetch_places['place_name']; ?></textarea>
+                    <textarea name="place_id" cols="30" rows="5"><?= $fetch_places['id']; ?></textarea>
+                  </div>
+
                 </form>
             </div>
          </div>

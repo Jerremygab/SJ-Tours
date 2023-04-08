@@ -25,7 +25,7 @@ include 'components/connect.php'
         <div class="exp_container container">
             <div class="search_bar">
                 <form action="" method="post" id="search_form">
-                    <input type="textbox" name="search_box" id="search-box" placeholder="Search here">
+                    <input type="textbox" name="search_box" id="search-box" placeholder="Search places">
                     <button type="submit" class="bx bx-search icons_" name="search_btn"></button>
                 </form>
             </div>
@@ -34,11 +34,11 @@ include 'components/connect.php'
                     <h4>Weekend Gateaway</h4>
                     
                 </div>
-                <div class="exp_contents_">
+                <div class="exp_grid">
                     <?php
                        if(isset($_POST['search_box']) OR isset($_POST['search_btn'])){
                         $search_box = $_POST['search_box'];
-                        $select_places = $conn->prepare("SELECT * FROM `weekend_gateaway` WHERE search LIKE '%{$search_box}%'"); 
+                        $select_places = $conn->prepare("SELECT * FROM `weekend_gateaway` WHERE search LIKE '%{$search_box}%'");
                         $select_places->execute();
                         if($select_places->rowCount() > 0){
                          while($fetch_places = $select_places->fetch(PDO::FETCH_ASSOC)){
@@ -78,7 +78,7 @@ include 'components/connect.php'
                     <h4>Gastronomic Experience</h4>
                     
                 </div>
-                <div class="exp_contents_">
+                <div class="exp_grid">
                     <?php
                         if(isset($_POST['search_box']) OR isset($_POST['search_btn'])){
                             $search_box = $_POST['search_box'];
@@ -124,7 +124,7 @@ include 'components/connect.php'
                     <h4>Cultural and Natural Attractions</h4>
                     
                 </div>
-                <div class="exp_contents_">
+                <div class="exp_grid">
                     <?php
                         if(isset($_POST['search_box']) OR isset($_POST['search_btn'])){
                             $search_box = $_POST['search_box'];
@@ -171,7 +171,7 @@ include 'components/connect.php'
                     <h4>Souvenirs</h4>
                     
                 </div>
-                <div class="exp_contents_">
+                <div class="exp_grid">
                     <?php
                         if(isset($_POST['search_box']) OR isset($_POST['search_btn'])){
                         $search_box = $_POST['search_box'];

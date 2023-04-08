@@ -43,36 +43,46 @@ include 'components/connect.php';
                 there's sure to be a destination that's perfect for you at San Juan, Batangas.
             </p>
         </div>
-        <div class="plan_row_items">
+        <div class="plan_grid">
             <div class="plan_container_box">
-                <div class="plan_container_img">
-                    <i class='bx bxs-car icons_'></i>
-                </div>
-                <h5>Travel Guidelines</h5>
+                <a href="travel-information.php">
+                    <div class="plan_container_img">
+                        <i class='bx bxs-car icons_'></i>
+                    </div>
+                    <h5>Travel Guidelines</h5>
+                </a>
             </div>
             <div class="plan_container_box">
-                <div class="plan_container_img">
-                    <i class='bx bx-swim icons_' ></i>
-                </div>
-                <h5>Beach Resorts</h5>
+                <a href="wg-see-more.php">
+                    <div class="plan_container_img">
+                        <i class='bx bx-swim icons_' ></i>
+                    </div>
+                    <h5>Beach Resorts</h5>
+                </a> 
             </div>
             <div class="plan_container_box">
-                <div class="plan_container_img">
-                    <i class='bx bx-run icons_' ></i>
-                </div>
-                <h5>Outdoor Activities</h5>
+                <a href="">
+                    <div class="plan_container_img">
+                        <i class='bx bx-run icons_' ></i>
+                    </div>
+                    <h5>Outdoor Activities</h5>
+                </a>
             </div>
             <div class="plan_container_box">
-                <div class="plan_container_img">
-                    <i class='bx bxs-hotel icons_' ></i>
-                </div>
-                <h5>Hotels</h5>
+                <a href="">
+                    <div class="plan_container_img">
+                        <i class='bx bxs-hotel icons_' ></i>
+                    </div>
+                    <h5>Hotels</h5>
+                </a>
             </div>
             <div class="plan_container_box">
-                <div class="plan_container_img">
-                    <i class='bx bxs-bowl-hot icons_' ></i>
-                </div>
-                <h5>Dining</h5>
+                <a href="gs-see-more.php">
+                    <div class="plan_container_img">
+                        <i class='bx bxs-bowl-hot icons_' ></i>
+                    </div>
+                    <h5>Dining</h5>
+                </a>
             </div>
             <div class="plan_container_box">
                 <a href="maps.php">
@@ -97,7 +107,7 @@ include 'components/connect.php';
                     <h4>Weekend Gateaway</h4>
                     <a href="wg-see-more.php">See more</a>
                 </div>
-                <div class="exp_contents_">
+                <div class="exp_grid">
                     <?php
                         $select_places = $conn->prepare("SELECT * FROM `weekend_gateaway` ORDER BY RAND() LIMIT 5"); 
                         $select_places->execute();
@@ -138,7 +148,7 @@ include 'components/connect.php';
                     <h4>Gastronomic Experience</h4>
                     <a href="gs-see-more.php">See more</a>
                 </div>
-                <div class="exp_contents_">
+                <div class="exp_grid">
                     <?php
                         $select_places = $conn->prepare("SELECT * FROM `gastronomic_exp` ORDER BY RAND() LIMIT 5"); 
                         $select_places->execute();
@@ -181,7 +191,7 @@ include 'components/connect.php';
                     <h4>Cultural and Natural Attractions</h4>
                     <a href="#">See more</a>
                 </div>
-                <div class="exp_contents_">
+                <div class="exp_grid">
                     <?php
                         $select_places = $conn->prepare("SELECT * FROM `attractions` ORDER BY RAND() LIMIT 5"); 
                         $select_places->execute();
@@ -225,7 +235,7 @@ include 'components/connect.php';
                     <h4>Souvenirs</h4>
                     <a href="#">See more</a>
                 </div>
-                <div class="exp_contents_">
+                <div class="exp_grid">
                     <?php
                         $select_places = $conn->prepare("SELECT * FROM `souvenirs` ORDER BY RAND() LIMIT 5"); 
                         $select_places->execute();
@@ -268,7 +278,7 @@ include 'components/connect.php';
 
     <section class="testimonials_ section" id="testimonials">
     <div class="title_">I Experienced San Juan</div>
-    <div class="testimonials_container">
+    <div class="testimonials_container testimonial_grid">
         <div class="testimonials_content">
                 <div class="testimonial_img">
                     <img src="img/juandelacruz.jpg" alt="">
@@ -343,7 +353,7 @@ include 'components/connect.php';
 <section class="instagram_ section" id="instagram">
     <div class="instagram_container container">
         <h1>@juanderfulsanjuan</h1>
-        <div class="instagram_content">
+        <div class="instagram_content instagram_grid">
             <?php
                 $select_places = $conn->prepare("SELECT * FROM `ig_post` ORDER BY RAND() LIMIT 8"); 
                 $select_places->execute();
@@ -354,7 +364,7 @@ include 'components/connect.php';
             <?php
             }
             }else{
-                echo '<p class="empty">No places found!</p>';
+                echo '<p class="empty">No post found!</p>';
             }
             ?>
             </div>

@@ -242,7 +242,7 @@ header.sticky{
     line-height: 1.1;
 } */
 
-.plan_row_items{
+.plan_grid{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     align-items: center;
@@ -288,7 +288,7 @@ header.sticky{
     margin-bottom: var(--mb-1-5);
 }
 
-.exp_container .exp_contents_{
+.exp_grid{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap:1.5rem;
@@ -426,7 +426,7 @@ header.sticky{
 .row .exp_links .icons_{
     font-size: 2.5rem;
 }
-.contact_ .column_ {
+.contact_ .contact_grid {
     display: grid;
     grid-template-columns: repeat(2,1fr);
     margin: 0 15%;
@@ -477,7 +477,7 @@ form {
     width: 45%;
 }
 
- input[type='text'], [type='email'], select, textarea {
+ input[type='text'],[type='number'], [type='email'], select, textarea {
     background-color: transparent;
     border: none;
     border-bottom: solid 2px var(--text-color);
@@ -501,7 +501,7 @@ form {
     transition: all 0.3s;
 }
 
- input[type='text']:focus, [type='email']:focus, textarea:focus {
+ input[type='text']:focus, [type='email']:focus,[type='number']:focus, textarea:focus {
     outline: none;
     padding: 0 0 0.875em 0;
 }
@@ -574,7 +574,7 @@ iframe{
     border-radius: 5px;
     border: 0;
 }
-.testimonials_container{
+.testimonial_grid{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     margin-top: var(--mb-3);
@@ -655,7 +655,7 @@ iframe{
     text-align: center;
     margin-bottom: 2rem;
 }
-.instagram_content{
+.instagram_grid{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 1rem;
@@ -738,17 +738,18 @@ table td{
     text-align: center;
     margin-bottom: var(--mb-1);
 }
-.more{
+.more_grid{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     justify-items: center;
     align-items: start;
 }
-.more .exp_img_box img{
+.more_grid .exp_img_box img{
     width: 430px;
     height: 300px;
     border-radius: .5rem;
     transition: all .4s ease 0s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .right_side .details{
     font-size: var(--normal-font-size);
@@ -804,8 +805,36 @@ table td{
     color: var(--modal-color);
 }
 
+@media screen and (min-width: 350px) {
+    
+}
+@media screen and (min-width: 568px) {
 
+}
+@media screen and (min-width: 780px) {
 
+}
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (max-width: 1400px) {
+    header{
+        padding: 17px 3%;
+        transition: .4s;
+    }
+    header.sticky{
+        padding: 10px 3%;
+        transition: .4s;
+    }
+    .section{
+        padding: 50px 3%;
+        transition: .4s;
+    }
+    *{
+        display: none;
+    }
+    
+}
   @media screen and (max-width: 768px) {
     #contact-container {
       margin: 20px auto;
@@ -831,7 +860,7 @@ table td{
       width: 53px;
     }
     
-    input[type='text'], [type='email'], select, textarea {
+    input[type='text'],[type='number'], [type='email'], select, textarea {
       font-size: 0.875em;
     }
   }

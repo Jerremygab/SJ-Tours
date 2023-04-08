@@ -54,7 +54,7 @@ include 'components/connect.php';
             <div class="quick_content">
                 <div class="name"><?= $fetch_places['place_name']; ?></div>
                 <div class="details"><?= $fetch_places['location']; ?></div>
-                <div class="details"><?= $fetch_places['description']; ?></div>
+                <div class="details"><?= $fetch_places['details']; ?></div>
                 <div class="details">Rate starts at: <b>PHP <?= $fetch_places['rate']; ?>.00</b></div>
                 
 
@@ -96,7 +96,7 @@ include 'components/connect.php';
                     <h4></h4>
                     <a href="wg-see-more.php">See more</a>
                 </div>
-                <div class="exp_contents_">
+                <div class="exp_grid">
                     <?php
                         $select_places = $conn->prepare("SELECT * FROM `weekend_gateaway` ORDER BY RAND() LIMIT 5"); 
                         $select_places->execute();

@@ -43,7 +43,7 @@ include 'components/connect.php';
                                 <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
                             </div>
                     </div>
-                    <div class="more">
+                    <div class="more_grid">
                         <div class="left_side">
                             <div class="exp_img_box">
                                 <img src="img/tourist/<?= $fetch_places['img1']; ?>" alt="">
@@ -51,7 +51,7 @@ include 'components/connect.php';
                         </div>
                         <div class="right_side">
 
-                            <p><?= substr($fetch_places['description'], 0, 260); ?>...</p><br>
+                            <p><?= substr($fetch_places['details'], 0, 260); ?>...</p><br>
                             <div class="details">Rate starts at: <br><b>PHP <?= $fetch_places['rate']; ?>.00</b></div>
                             <div class="details">
                                 Total views:

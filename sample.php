@@ -10,12 +10,12 @@ $places_names = $weekend_gateway_places->fetchAll(PDO::FETCH_DEFAULT);
 //else reload or 
 
 
-$contact_forms = [
+/* $contact_forms = [
     Acuatico Beach Resort => [
         [name => 'Jerremy', id=> 5],
         [name => 'jhonas', id=> 4]
     ]
-]
+] */
 
 ?>
 <!DOCTYPE html>

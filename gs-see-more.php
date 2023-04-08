@@ -43,14 +43,14 @@ include 'components/connect.php';
                                 <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
                             </div>
                     </div>
-                    <div class="more">
+                    <div class="more_grid">
                         <div class="left_side">
                             <div class="exp_img_box">
                                 <img src="img/tourist/<?= $fetch_places['img1']; ?>" alt="">
                             </div>
                         </div>
                         <div class="right_side">
-                            <p><?= $fetch_places['description']; ?></p>
+                            <p><?= $fetch_places['details']; ?></p>
                             
                             <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
                                 <button class="visit_btn">Visit Now</button>
