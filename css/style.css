@@ -774,6 +774,29 @@ table td{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.options{
+    height: 3rem;
+    padding: 0;
+    margin: 0;
+}
+.seemore_sort{
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+#seemore_sort{
+    height: 100%;
+    width: 15%;
+    padding-top: .5rem;
+}
+#seemore_sort option{
+    text-align: center;
+    font-size: var(--normal-font-size);
+    
+}
+
+
 #search_form{
     padding: 0;
     display: flex;
@@ -804,6 +827,23 @@ table td{
     border-radius: 5px;
     color: var(--modal-color);
 }
+
+
+/* Extra small devices (phones, 600px and down)
+@media only screen and (max-width: 600px) {...}
+
+Small devices (portrait tablets and large phones, 600px and up)
+@media only screen and (min-width: 600px) {...}
+
+Medium devices (landscape tablets, 768px and up)
+@media only screen and (min-width: 768px) {...}
+
+Large devices (laptops/desktops, 992px and up)
+@media only screen and (min-width: 992px) {...}
+
+Extra large devices (large laptops and desktops, 1200px and up)
+@media only screen and (min-width: 1200px) {...}
+ */
 
 @media screen and (min-width: 350px) {
     
