@@ -339,7 +339,7 @@ include 'components/connect.php';
                     <i class='bx bx-star ratings_' ></i>
                 </div>
         </div>
-        <div></div>
+        </div>
         <div class="testimonials_footer">
             <p>Read more Experiences.</p>
             <a href="https://www.facebook.com/juanderfulsanjuan/reviews" target="_blank" class="testimonials_btn">
@@ -347,7 +347,7 @@ include 'components/connect.php';
                 Follow us on Facebook
             </a>
         </div>
-    </div>
+    
 </section>
     
 <section class="instagram_ section" id="instagram">
