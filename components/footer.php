@@ -8,11 +8,12 @@
             <li><a href="index.php#experience" class="foot-nav">Places to go</a></li>
             <li><a href="travel-information.php" class="foot-nav">Travel Information</a></li>
             <li><a href="#" onclick="back2Top()" class="foot-nav">Back to top</a></li>
-            <li><a href="index.php#experience"><i class='bx bx-swim icons_ nav-none'></i></a></li>
-            <li><a href="index.php#experience"><i class='bx bxs-map-pin icons_ nav-none'></i></a></li>
-            <li><a href="travel-information.php"><i class='bx bxs-info-circle icons_ nav-none' ></i></a></li>
-            <li><a href="#" onclick="back2Top()"><i class='bx bx-arrow-to-top icons_ nav-none' ></i></a></li>
-    
+            <div class="footer_icons ">
+                <a href="index.php#experience" ><i class='bx bx-leaf icons_ nav-none'></i></a>
+                <a href="index.php#experience" ><i class='bx bx-navigation icons_ nav-none'></i></a>
+                <a href="travel-information.php" ><i class='bx bx-info-circle icons_ nav-none'></i></a>
+                <a href="" onclick="back2Top()" ><i class='bx bx-arrow-to-top icons_ nav-none'></i></a>
+            </div>
         </ul>
 
         <div class="footer_icons ">
@@ -22,4 +23,4 @@
         </div>
 
     </footer>
-</section>
+</section><i class='bx '></i>

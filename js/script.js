@@ -70,11 +70,7 @@ const mostViewed = document.querySelector('#viewed').value;
 const lowestPrice = document.querySelector('#lowest').value;
 const highestPrice = document.querySelector('#highest').value;
 
-function mostViewed(){
-  
-  let views = document.getElementById('id')
 
-}
 
 /* function openModalBox(){
   var modal = $('.modal, #mask');

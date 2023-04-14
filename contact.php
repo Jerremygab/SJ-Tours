@@ -42,8 +42,11 @@ if(isset($_POST['send'])){
          
          <div class="contact_container contact_grid">
             <div class="contact_content row_">
-               <br><br>
-               <br><br>
+              <div class="joker">
+                <br><br>
+                <br><br>
+              </div>
+               
                <div class="contact_details">
                     <b>Phone Number</b>
                     <p><?= $fetch_places['phone_link1']; ?></p>

@@ -36,7 +36,7 @@ include 'components/connect.php';
                     the CALABARZON region. Based on these figures, the population density is computed 
                     at 417 inhabitants per square kilometer or 1,081 inhabitants per square mile.
                 </p>
-                <div class="title_">Summary Data</div>
+                
                 <table>
                     <tr>
                         <th>Type</th>
