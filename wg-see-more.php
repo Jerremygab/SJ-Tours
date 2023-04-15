@@ -20,7 +20,7 @@ include 'components/connect.php';
     <br><br>
     <br><br>
     <br><br>
-    <section class="section">
+    <section class="section see-more" >
         <div class="seemore_container container">
             <div class="title_">Weekend Gateaway</div>
             <div class="dropdown">
