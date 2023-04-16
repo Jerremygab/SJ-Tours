@@ -155,6 +155,13 @@ footer{
     justify-content: space-between;
     padding: 1rem;
 }
+.footer_nav {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: var(--small-font-size);
+    align-items: center;
+    gap: 1.5rem;
+}
 
 .footer_icons{
     display: flex;
@@ -256,7 +263,6 @@ header.sticky{
 
 @media screen and (max-width: 767px) {
     .navbar_{
-        position: fixed;
         height: 100%;
         top: 0%;
         right: -100%;
@@ -408,7 +414,6 @@ header.sticky{
 .view_count p{
     font-size: var(--smaller-font-size);
     font-weight: var(--font-medium);
-    margin: 0 0 1rem;
 }
 .view_count .icons_{
     font-size: var(--normal-font-size);
@@ -493,11 +498,7 @@ header.sticky{
     margin: 3rem 0 1rem;
 }
 .amenities hr  {
-    margin: 2rem auto;
-    border: none;
-    border-bottom: 1px solid black;
     width: 50%;
-    display: flex;  
 }
 .amenities ul  {
     display: grid;
@@ -527,9 +528,7 @@ header.sticky{
 .joker{
     display: none;
 }  
-.contact_content form{
-    padding: 0;
-}
+
 .contact_details{
     text-align: center;
     margin-bottom: var(--mb-2);
@@ -666,7 +665,7 @@ iframe{
 }
 .testimonials_content img{
     position: absolute;
-    top: -45px;
+    top: -40px;
     display: block;
     width: 70px;
     height: 70px;
@@ -808,8 +807,8 @@ table td{
     padding: 0;
 }
 .seemore_contents{ 
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
+    display: flex;
+    flex-direction: column;
     justify-items: center;
     align-items: start;
     margin: 1rem;
@@ -904,8 +903,9 @@ table td{
     border-radius: 5px;
     color: var(--modal-color);
 }
+/* ========================================= */
 
-  
+/*   MEDIA QUERIES */
 @media screen and (max-width: 480px) {   
 .underline {
     width: 68px;
@@ -926,549 +926,216 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
     font-size: 0.875em;
 }
 }
-/* 
-@media screen and (max-width: 780px) {
-    #menu-icon{
-        display: block;
-        color: var(--text-color);
-    }
-    .sticky #menu-icon{
-        color: var(--text-color);
-    }
-    .navbar_{
-        position: absolute;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 120vh;
-        background-color: var(--primary-color);
-        opacity: .97;
-        display: flex;
-        gap: 1rem;
-        flex-direction: column;
-        align-items: center;
-        padding: 150px 30px;
-        transition: .5s all;
-    }
-    .navbar_ a{
-        display: block;
-        margin: 1.2rem;
-    }
-    .sticky .navbar_ a{
-        color: var(--bg-color);
-    }
-    .navbar_ a:hover{
-        color: var(--text-color);
-    }
-    .open{
-        right: 0;
-    }
-    footer .nav-none{
-        display: block;
-    }
-    footer .foot-nav{
-        display: none;
-    }
-    #contact-container {
-        margin: 20px auto;
-        width: 95%;
-    }
-    .sticky .logo img{
-        width: 2rem;
-        height: 2rem;
-        margin: auto;
-    }
-    .logo img {
-        width: 4rem;
-        height: 4rem;
-    }
-}
+
 /* For small devices */
-/* @media screen and (max-width: 350px) {
-  .title_{
-    padding: 1rem;
-  }
-  .foot_{
-    font-size: 8px;
-  }
-  .footer_ .icons_ {
-    font-size: var(--h3-font-size);
-  }
-  .home_text h1 {
-    font-size: var(--big-font-size);
-  }
-  .home_text p{
-    font-size: var(--small-font-size);
-  }
-  .plan_grid{
-    grid-template-columns: repeat(3,1fr);
-  }
-  .exp_category{
-    margin-top: .5rem;
-  }
-  .exp_category h4{
-    font-size: var(--normal-font-size);
-  }
-  .exp_category a{
-    font-size: .6rem;
-    padding-top: 5px;
-  }
-  .exp_grid{
-    grid-template-columns: repeat(2,1fr);
-  }
-  .exp_img_box img{
-    height: 90px;
-  }
-  .testimonial_grid {
-    grid-template-columns: repeat(1,1fr);
-    gap: 3rem;
-  }
-  .testimonials_content img {
-    top: -35px;
-    width: 70px;
-    height: 70px;
-  }
-  .testimonials_container p {
-    font-size: var(--normal-font-size);
-  }
-  .testimonials_content .icons_ {
-    font-size: 2rem;
-  }
-  .ratings{
-    font-size: var(--normal-font-size);
-    color: gold;
-  }
-  .testimonials_footer p {
-    font-size: var(--small-font-size);
-    margin: var(--mb-1);
-  }
-  .testimonials_btn{
-    font-size: var(--small-font-size);
-  }
-  .testimonials_btn .icons_ {
-    font-size: var(--small-font-size);
-  }
-  .instagram_container h1 {
-    font-size: var(--normal-font-size);
-  }
-  .instagram_grid {
-    grid-template-columns: repeat(2,1fr);
-  }
-  .instagram_content img {
-    width: 120px;
-    height: 120px;
-  }
-  .seemore_contents{
-    margin: 0;
-  }
-  .more_grid {
-    grid-template-columns: repeat(1,1fr);
-  }
-  .right_side{
-    margin-top: 1rem;
-  }
-  .more_grid .exp_img_box img{
-    width: 100%;
-    height: 200px;
-  }
-  .more_grid {
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    justify-items: center;
-    align-items: start;
-  }
-  .img_container {
-    padding: 1rem;
-    width: auto;
-    margin: 0;
-  }
-  .quick_view .form {
-    padding: 2rem 0;
-  }
-  .img_container .sub_image {
-    gap: 5px;
-  }
-  .img_container .sub_image img {
-    max-height: 40px;
-  }
-  .quick_content .details {
-    font-size: var(--normal-font-size);
-  }
-  .quick_content .name {
-    font-size: var(--h1-font-size);
-  }
-  .quick_content .details b {
-    font-size: var(--h3-font-size);
-  }
-  .amenities ul {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 1rem;
-  }
-  .amenities li {
-    padding: 1rem;
-  }
-  .row .exp_links .icons_ {
-    font-size: 1.8rem;
-  }
-  .contact_ .contact_grid {
-    grid-template-columns: repeat(1,1fr);
-    margin: 0;
-    text-align: center;
-  }
-  .contact_details hr {
-    margin: auto;
-    margin-top: 1rem;
-  }
-  .contact_content {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-  }
-  .contact_details p {
-    font-size: var(--small-font-size);
-  }
-  .joker{
-    display: none;
-  }
-  #form_button {
-    padding: 10px 20px;
-    font-size: var(--smaller-font-size);
-  }
-  form {
-    margin: 0;
-  }
-  iframe{
-    height: 400px;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  .icons_{
-    font-size: var(--h3-font-size);
-  }
-  
-  .travel_content table{
-    display: none;
-  }
-  .travel_content p {
-    margin: 0;
-  }
-  .travel_grid {
-    grid-template-columns: repeat(1,1fr);
-  }
-  .travel_img {
-    margin: 0;
-  }
-  .map_container{
-    padding: 0;
-  }
-}
-@media screen and (min-width: 414px) {
+/* GALAXY FOLD */
+
+@media screen and (max-width: 350px) {
+    html{
+        width: 146vw;
+        overflow-x: hidden;
+    }
+    .section {
+        padding: 50px 3% 15px;
+    }
+    header.sticky {
+        padding: 40px 12% 10px;
+    }
+    .home_ {
+        width: 150vw;
+    }
     .home_text h1 {
         font-size: var(--big-font-size);
     }
     .home_text p {
-        color: var(--modal-color);
         font-size: var(--smaller-font-size);
-        font-weight: 400;
-        margin-bottom: 50px;
-        text-shadow: 0px 1px 3px #000000;
     }
     .plan_grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: .5rem;
-    }
-    .plan_container_box h5{
-        font-size: 10px;
-    }
-    .exp_container p {
-        font-size: var(--small-font-size);
-    }
-    .exp_category h4{
-        font-size: var(--normal-font-size);
-    }
-    .exp_category a{
-        font-size: var(--smaller-font-size);
-    }
-    .exp_grid {
-        grid-template-columns: repeat(2, 1fr);
+        align-items: normal;
     }
     .exp_img_box img {
-        height: 100px;
-    }
-    .icons_ {
-        font-size: var(--normal-font-size);
-    }
-    .testimonial_grid {
-        grid-template-columns: repeat(1,1fr);
-        gap: 4rem;
-    }
-    .testimonials_container p {
-        font-size: var(--small-font-size);
-    }
-    .testimonials_footer p {
-        font-size: var(--smaller-font-size);
-    }
-    .testimonials_btn {
-        border: none;
-        font-size: var(--smaller-font-size);
-    }
-    .testimonials_btn .icons_ {
-        font-size: var(--small-font-size);
-        color: var(--bg-color);
-        margin: auto;
-    }
-    .instagram_container h1{
-        font-size: var(--h3-font-size);
-    }
-    .instagram_grid {
-        grid-template-columns: repeat(2,1fr);
+        height: 75px;
     }
     .instagram_content img {
-        width: 150px;
         height: 150px;
     }
     .foot_ {
         font-size: 8px;
     }
-    .footer_ .icons_ {
-        font-size: var(--h3-font-size);
-    }
-} */
-/* For medium devices */
-/* @media screen and (min-width: 568px) {
-    .title_{
-        padding: 1rem;
-    }
-    .plan_grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .exp_grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .exp_img_box img {
-        height: 120px;
-    }
-    .testimonial_grid {
-        grid-template-columns: repeat(2,1fr);
-        gap: 4rem;
-    }
-    .testimonials_content .icons_ {
-        font-size: 2rem;
-    }
-    .testimonials_container p {
-        font-size: var(--small-font-size);
-    }
-    .testimonials_btn {
-        font-size: var(--small-font-size);
-    }
-    .testimonials_btn .icons_ {
-        font-size: var(--normal-font-size);
-    }
-    .instagram_container h1 {
-        font-size: var(--h3-font-size);
-    }
-    .instagram_grid {
-        grid-template-columns: repeat(2,1fr);
-    }
-    .instagram_content img {
-        width: 220px;
-        height: 250px;
+    .bg_container {
+        padding: 2rem 1rem 4rem 1rem;
     }
     .quick_view .form {
-        padding: 0;
+        padding: 1rem;
     }
-    .img_container {
-        margin: 0;
+    .img_container .main_image img {
+        width: 100%;
+        height: 200px;
     }
     .img_container .sub_image {
-        gap: 5px;
+        gap: 0.5rem;
     }
-      .img_container .sub_image img {
-        max-height: 50px;
+    .quick_content .name {
+        font-size: var(--h3-font-size);
+    }
+    .quick_content .details,
+    .exp_category,
+    .quick_content .details b {
+        font-size: var(--normal-font-size);
+    }
+    .amenities ul {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 1rem;
+    }
+    .travel_grid li,
+    .amenities li {
+        margin-left: 1.5rem;
+    }
+    .contact_details p {
+        font-size: var(--small-font-size);
+    }
+}
+/* For medium devices */
+/* 582 X 658 */
+@media screen and (min-width: 568px) {
+    .instagram_content img {
+        height: 220px;
     }
     .amenities ul {
         grid-template-columns: repeat(3,1fr);
         gap: 1rem;
     }
-    .amenities li{
-        padding: 0 1rem;
+    .amenities li {
+        margin-left: 1.5rem;
     }
-    .row .exp_links .icons_ {
-        font-size: 2rem;
-    }
-    .contact_ .contact_grid {
-        grid-template-columns: repeat(1,1fr);
-        margin: 0;
-        text-align: center;
-    }
-    .contact_details hr {
-        margin: auto;
-        margin-top: 1rem;
-    }
-    .joker{
-        display: none;
-      }
-    #form_button {
-        padding: 10px 20px;
-        font-size: var(--smaller-font-size);
-    }
-    form {
-        margin: 1rem 15%;
-    }
-    iframe{
-        height: 400px;
-        padding: 10px;
-        border-radius: 5px;
-    }
-    .more_grid {
-        grid-template-columns: repeat(1,1fr);
-    }
-    .more_grid .exp_img_box img {
-        width: 100%;
-    }
-    .right_side p{
-        margin-top: 1rem;
-    }
-    .right_side .details p{
-        margin: 0;
-    }
-    .travel_content table{
-        display: none;
-    }
-    .icons_{
-        font-size: var(--normal-font-size);
-    }
-    .travel_content p {
-        margin: 0;
-    }
-    .travel_grid {
-        grid-template-columns: repeat(1,1fr);
-    }
-    .travel_img {
-        margin: 0;
-    }
-    .map_container{
-        padding: 0;
-    }
-    .search_bar{
-        margin-bottom: var(--mb-1);
-    }
-    .foot_{
-        font-size: var(--small-font-size);
-    }
-    
 }
 
-@media screen and (min-width: 780px) {
-    header.sticky{
-        padding: 2rem 5% 1rem;
-    }
-    .sticky .navbar_ a{
-        padding: 10px 8px;
-    }
-    .sticky .logo img{
-        width: 2.5rem;
-        height: 2.5rem;
-    }
+/* 780 x 658 */
+@media screen and (min-width: 768px) {
+    
     header {
-        padding: 2rem 5%;
+        padding: 30px 1rem 30px 10%;
     }
-    .logo img {
-        width: 4rem;
-        height: 4rem;
+    header.sticky {
+        padding: 10px 1rem 10px 10%;
     }
-    .navbar_ a {
-        padding: 10px 8px;
-    }
-    .instagram_grid {
-        grid-template-columns: repeat(3,1fr);
-    }
-    .instagram_content img {
-        width: 200px;
-    }
-    footer .nav-none{
-        display: block;
-    }
-    footer .foot-nav{
+    #menu-icon{
         display: none;
     }
-    .footer_icons{
-        gap: 1rem;
+    .navbar_ a{
+        display: block;
+        padding: 10px;
     }
-    .seemore_contents .exp_links .icons_{
-        font-size: var(--h2-font-size);
-    }
-    .right_side .details p{
-        margin: 0;
-    }
-    .img_container .sub_image img {
-        max-height: 70px;
-    }
-    form {
-        margin: 1rem 15%;
-    }
-    #search_form{
-        margin: 0;
-    }
-} */
-/* For large devices
-@media screen and (min-width: 1024px) {
     .plan_grid {
         grid-template-columns: repeat(6, 1fr);
+        align-items: normal;
     }
     .exp_grid {
         grid-template-columns: repeat(4, 1fr);
     }
-    .exp_img_box img{
-        width: 100%;
-        height: 170px;
-        border-radius: .5rem;
-        transition: all .4s ease 0s;
-    }
-    .instagram_grid {
-        grid-template-columns: repeat(4,1fr);
-    }
-    .travel_grid li {
-        margin-left: 15%;
-    }
-    .seemore_contents .exp_links .icons_{
-        font-size: var(--h2-font-size);
-    }
     .testimonial_grid {
         grid-template-columns: repeat(3,1fr);
-        gap: 2rem;
+        gap: 1rem;
     }
-    
-}
-@media screen and (min-width: 1400px) {
-    .plan_grid {
-        grid-template-columns: repeat(6, 1fr);
+    .instagram_grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+} 
+/* For large devices */
+/* 1058 X 658 */
+@media screen and (min-width: 1024px) {
+    .navbar_ a {
+        display: block;
+        padding: 15px;
+    }
+    .footer_icons .nav-none{
+        font-size: var(--h2-font-size);
+        margin-right: 1.5rem;
+    }   
+    .home_text h1 {
+        font-size: var(--big-font-size);
+    }
+    .home_text p {
+        font-size: var(--small-font-size);
     }
     .exp_grid {
         grid-template-columns: repeat(5, 1fr);
     }
-    .exp_img_box img{
-        width: 100%;
-        height: 200px;
-        border-radius: .5rem;
-        transition: all .4s ease 0s;
+    .exp_img_box img {
+        height: 120px;
     }
     .instagram_grid {
         grid-template-columns: repeat(4,1fr);
     }
-    .instagram_content img {
+    .more_grid {
+        grid-template-columns: repeat(2,1fr);
+        gap: 1rem;
+    }
+    .more_grid .exp_img_box img {
         width: 100%;
-        height: 400px;
+        height: 300px;
     }
-    .travel_grid li {
-        margin-left: 15%;
+    .exp_links .icons_ {
+        font-size: var(--h3-font-size);
     }
-    .seemore_contents .exp_links .icons_{
-        font-size: var(--h2-font-size);
+    .quick_view .form {
+        padding: 2rem 4rem;
+        background-color: var(--modal-color);
+        border-radius: 5px;
     }
-    .testimonial_grid {
+    .img_container .sub_image img {
+        height: 90px;
+    }
+    .amenities ul {
+        grid-template-columns: repeat(4,1fr);
+    }
+    .contact_ .contact_grid {
+        grid-template-columns: repeat(2,1fr);
+        padding: 3rem 1rem;
+    }
+    .contact_content form {
+        padding: 0;
+        margin:  0;
+    }
+    .contact_details {
+        text-align: left;
+        margin-bottom: var(--mb-2);
+    }
+    .contact_details hr {
+    margin: 2rem 0;
+}
+
+}
+
+@media screen and (min-width: 1400px) {
+    
+    .navbar_ a {
+        padding: 15px 30px;
+    }
+    .exp_img_box img {
+        height: 150px;
+    }
+    .instagram_content img {
+        height: 350px;
+    }
+    .quick_view .form {
+        padding: 2rem 7rem;
+        background-color: var(--modal-color);
+        border-radius: 5px;
+    }
+    .img_container .sub_image img {
+        height: 110px;
+    }
+    .amenities ul {
+        grid-template-columns: repeat(5,1fr);
+    }
+    .contact_ .contact_grid {
+        grid-template-columns: repeat(2,1fr);
+        padding: 3rem 1rem;
+    }
+    .travel_grid {
+        display: grid;
         grid-template-columns: repeat(3,1fr);
-        gap: 2rem;
     }
-}  */
+} 
