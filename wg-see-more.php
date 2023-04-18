@@ -25,38 +25,32 @@ include 'components/connect.php';
             <div class="title_">Weekend Gateaway</div>
             <div class="dropdown">
                 <div class="options">
-                    <form action="" method="post" class="seemore_sort">
-                        <label for="seemore_sort">Sort By:</label>
-                        <select name="seemore_sort" id="seemore_sort">
-                            <option value="0">Default</option>
-                            <option value="1" name="mostViewed">Most Viewed</option>
-                            <option value="2" name="lowestPrice">Lowest Price</option>
-                            <option value="3" name="highestPrice">Highest Price</option>
-                        </select>
-                        
-                    </form>
+                      
+                <form action="" method="post">
+                    <select name="sort-option" id="seemore_sort" onchange="sortSubmit()">
+                        <option value="" disabled selected>--Sort By--</option>
+                        <option value="mostViewed">Most Viewed</option>
+                        <option value="lowestPrice">Lowest Price</option>
+                    </select>
+                </form>
+            
                 </div>
             </div>
             <div class="seemore_contents">
 
                 <?php 
-
-                        
-                       /*  if($sortItem === 1){
-                            $sql = "SELECT * FROM `weekend_gateaway` ORDER BY views ASC"; 
+                    if(isset($_POST["sort"])){
+                        $sortBy = $_POST["sort-option"];
+                        $sql = '';
+                        if ($sortBy == "mostViewed"){
+                            $sql = "SELECT * FROM `weekend_gateaway` ORDER BY views ASC";
                         }
-                        elseif($sortItem === 2){
-                            $sql = "SELECT * FROM `weekend_gateaway` ORDER BY rate DESC"; 
-                        
-                        }
-                        elseif($sortItem === 3){
-                            $sql = "SELECT * FROM `weekend_gateaway` ORDER BY rate ASC";
-                        }
-                        else */
+                        else if ($sortBy == "lowestPrice"){
+                            $sql = "SELECT * FROM `weekend_gateaway` ORDER BY rate DESC";
+                        }else{
                             $sql = "SELECT * FROM `weekend_gateaway` ORDER BY id";
-                    
-
-                
+                        }
+                        
                     $select_places = $conn->prepare($sql); 
                     $select_places->execute();
                     if($select_places->rowCount() > 0){
@@ -97,7 +91,7 @@ include 'components/connect.php';
                 </div>
                 <?php
                 }
-                    
+                }     
                 }else{
                     echo '<p class="empty">No places found!</p>';
                 }

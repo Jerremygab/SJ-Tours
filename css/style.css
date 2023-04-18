@@ -339,7 +339,6 @@ header.sticky{
 .plan_grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    align-items: center;
     text-align: center;
     margin-top: 2rem;
     gap: .5rem;
@@ -848,27 +847,27 @@ table td{
     color: var(--primary-color)
 }
 
-.options{
-    display: none;
-    height: 3rem;
-    padding: 0;
-    margin: 0;
-}
-.seemore_sort{
+.options form{
     display: flex;
     justify-content: flex-end;
     gap: 5px;
+    height: 3rem;
+    padding: 0 1rem;
+    margin: 0 ;
 }
+.options select{
+    font-size: var(--smaller-font-size);
+    border-bottom: solid 1px var(--text-color);
+}
+
 
 #seemore_sort{
     height: 100%;
-    width: 15%;
-    padding-top: .5rem;
+    width: 35%;
+    padding: .5rem 0;
 }
-#seemore_sort option{
-    text-align: center;
-    font-size: var(--normal-font-size); 
-}
+
+
 
 /* ============================================= */
 
@@ -1009,6 +1008,9 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
     .amenities li {
         margin-left: 1.5rem;
     }
+    #seemore_sort{
+        width: 25%;
+    }
 }
 
 /* 780 x 658 */
@@ -1041,10 +1043,16 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
     .instagram_grid {
         grid-template-columns: repeat(3,1fr);
     }
+    #seemore_sort{
+        width: 20%;
+    }
 } 
 /* For large devices */
 /* 1058 X 658 */
 @media screen and (min-width: 1024px) {
+    .see-more .container{
+        padding: 2rem ;
+    }
     .navbar_ a {
         display: block;
         padding: 15px;
@@ -1063,7 +1071,7 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
         grid-template-columns: repeat(5, 1fr);
     }
     .exp_img_box img {
-        height: 120px;
+        height: 140px;
     }
     .instagram_grid {
         grid-template-columns: repeat(4,1fr);
@@ -1104,17 +1112,22 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
     }
     .contact_details hr {
     margin: 2rem 0;
-}
+    }
+    #seemore_sort{
+        width: 15%;
+    }
 
 }
 
 @media screen and (min-width: 1400px) {
-    
+    .section{
+        padding: 50px 10% 15px;
+    }
     .navbar_ a {
         padding: 15px 30px;
     }
     .exp_img_box img {
-        height: 150px;
+        height: 170px;
     }
     .instagram_content img {
         height: 350px;
@@ -1138,4 +1151,8 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
         display: grid;
         grid-template-columns: repeat(3,1fr);
     }
+    #seemore_sort{
+        width: 12%;
+    }
 } 
+
