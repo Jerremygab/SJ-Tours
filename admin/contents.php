@@ -44,23 +44,23 @@ if(!isset($admin_id)){
    <div class="box-container">
 
       <div class="box">
-         <h3>Welcome </h3>
-         <a href="update_profile.php" class="btn">Update profile</a>
+         <h3>Weekend Gateaway </h3>
+         <a href="wg-content.php" class="btn">Manage</a>
       </div>
 
       <div class="box">
-         <h3>Admin users</h3>
-         <a href="admin_accounts.php" class="btn">See admins</a>
+         <h3>Gastronomic Experience</h3>
+         <a href="gs-content.php" class="btn">Manage</a>
       </div>
 
       <div class="box">
-         <h3>messages</h3>
-         <a href="messages.php" class="btn">See messages</a>
+         <h3>Culture And Attractions</h3>
+         <a href="ca-content.php" class="btn">Manage</a>
       </div>
 
       <div class="box">
-         <h3>all Contents</h3>
-         <a href="contents.php" class="btn">See Contents</a>
+         <h3>Souvenirs</h3>
+         <a href="sv-content.php" class="btn">Manage</a>
       </div>
 
    </div>

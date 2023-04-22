@@ -20,17 +20,43 @@ include 'components/connect.php';
     <br><br>
     <br><br>
     <br><br>
-    <section class="section">
+    <section class="section see-more" >
         <div class="seemore_container container">
-            <div class="title_">Gastronomic Experience</div>
+            <div class="title_">Gastronomic experience</div>
+            <div class="dropdown">
+                <div class="options">
+                      
+                <form action="" method="post">
+                    <select name="sort-option" id="seemore_sort" onchange="sortSubmit()">
+                        <option value="" disabled selected>--Sort By--</option>
+                        <option value="mostViewed">Most Viewed</option>
+                        <option value="lowestPrice">Lowest Price</option>
+                    </select>
+                </form>
             
+                </div>
+            </div>
             <div class="seemore_contents">
-                <?php
-                    $select_places = $conn->prepare("SELECT * FROM `gastronomic_exp` ORDER BY RAND()"); 
+
+                <?php 
+                    /* if(isset($_POST["sort"])){
+                        $sortBy = $_POST["sort-option"];
+                        $sql = '';
+                        if ($sortBy == "mostViewed"){
+                            $sql = "SELECT * FROM `weekend_gateaway` ORDER BY views ASC";
+                        }
+                        else if ($sortBy == "lowestPrice"){
+                            $sql = "SELECT * FROM `weekend_gateaway` ORDER BY rate DESC";
+                        }else{ */
+                            $sql = "SELECT * FROM `gastronomic_exp` ORDER BY id";
+                        
+                        
+                    $select_places = $conn->prepare($sql); 
                     $select_places->execute();
                     if($select_places->rowCount() > 0){
                     while($fetch_places = $select_places->fetch(PDO::FETCH_ASSOC)){
-                ?> 
+                    
+                ?>
                 
                 <div class="bg_container">
                     <div class="exp_place">
@@ -50,16 +76,22 @@ include 'components/connect.php';
                             </div>
                         </div>
                         <div class="right_side">
-                            <p><?= $fetch_places['details']; ?></p>
-                            
-                            <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
-                                <button class="visit_btn">Visit Now</button>
+
+                            <p><?= substr($fetch_places['details'], 0, 260); ?>...</p><br>
+                            <div class="details">Price starts at: <br><b>PHP <?= $fetch_places['rate']; ?>.00</b></div>
+                            <div class="details">
+                                Total views:
+                                <p id="display_gastronomic_exp_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?> <i class="uil uil-eye icons_"></i></p> 
+                            </div>
+                            <a href="gs-quickview.php?pid=<?= $fetch_places['id']; ?>">
+                                <button id="<?= $fetch_places['id']; ?>" tbl="gastronomic_exp" button class="visit_btn">Details</button>
                             </a>
                         </div>
                     </div>
                 </div>
                 <?php
                 }
+                  
                 }else{
                     echo '<p class="empty">No places found!</p>';
                 }
@@ -73,3 +105,4 @@ include 'components/connect.php';
     <script src="js/viewCount.js"></script>
 </body>
 </html>
+      

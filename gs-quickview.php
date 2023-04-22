@@ -30,7 +30,7 @@ include 'components/connect.php';
 
 <?php
      $pid = $_GET['pid'];
-     $select_places = $conn->prepare("SELECT * FROM  `weekend_gateaway` WHERE id = ?"); 
+     $select_places = $conn->prepare("SELECT * FROM  `gastronomic_exp` WHERE id = ?"); 
      $select_places->execute([$pid]);
      if($select_places->rowCount() > 0){
       while($fetch_places = $select_places->fetch(PDO::FETCH_ASSOC)){
@@ -53,25 +53,28 @@ include 'components/connect.php';
             </div>
             <div class="quick_content">
                 <div class="name"><?= $fetch_places['place_name']; ?></div>
-                <div class="details"><?= $fetch_places['location']; ?></div>
+                <a href="<?= $fetch_places['map_link']; ?>">
+                    <div class="details"><?= $fetch_places['location']; ?></div>
+                </a>
                 <div class="details"><?= $fetch_places['details']; ?></div>
+                <div class="details">Store hours: <?= $fetch_places['opening']; ?></div>
                 <div class="details">Rate starts at: <b>PHP <?= $fetch_places['rate']; ?>.00</b></div>
                 
 
                 <div class="amenities">
-                    <h3>Property Amenities</h3>
+                    <h3>Dining</h3>
                     <ul class="li_grid">
-                        <?= $fetch_places['property_amenities']; ?>
+                        <?= $fetch_places['diets']; ?>
                     </ul>
                     <hr>
-                    <h3>Rooms Features </h3>
+                    <h3>Service Features </h3>
                     <ul class="li_grid">
-                        <?= $fetch_places['room_features']; ?>
+                        <?= $fetch_places['features']; ?>
                     </ul>
                     <hr>
-                    <h3>Room Types</h3>
+                    <h3>Offerings</h3>
                     <ul class="li_grid">
-                        <?= $fetch_places['room_types']; ?>
+                        <?= $fetch_places['offering']; ?>
                     </ul>
                     <hr>
                 </div>
@@ -98,15 +101,15 @@ include 'components/connect.php';
                 </div>
                 <div class="exp_grid">
                     <?php
-                        $select_places = $conn->prepare("SELECT * FROM `weekend_gateaway` ORDER BY RAND() LIMIT 5"); 
+                        $select_places = $conn->prepare("SELECT * FROM `gastronomic_exp` ORDER BY RAND() LIMIT 5"); 
                         $select_places->execute();
                         if($select_places->rowCount() > 0){
                         while($fetch_places = $select_places->fetch(PDO::FETCH_ASSOC)){
                     ?> 
-                    <div class="weekend_gateaway">
+                    <div class="gastronomic_exp">
                         <div class="exp_img_box">
-                        <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
-                            <img id="<?= $fetch_places['id']; ?>" tbl="weekend_gateaway" thumbnail src="img/tourist/<?= $fetch_places['img1']; ?>" >
+                        <a href="gs-quickview.php?pid=<?= $fetch_places['id']; ?>">
+                            <img id="<?= $fetch_places['id']; ?>" tbl="gastronomic_exp" thumbnail src="img/tourist/<?= $fetch_places['img1']; ?>" >
                         </a>
                         </div>
                         <div class="exp_place">
@@ -119,7 +122,7 @@ include 'components/connect.php';
                                 <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
                             </div>
                             <div class="view_count">
-                                <p id="display_weekend_gateaway_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?></p>    
+                                <p id="display_gastronomic_exp_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?></p>    
                                 <i class="uil uil-eye icons_"></i>                          
                             </div>
                         </div>

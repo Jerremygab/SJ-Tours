@@ -5,6 +5,12 @@ window.addEventListener('scroll', function(){
     header.classList.toggle('sticky', window.scrollY > 0);
 });
 
+document.querySelector(".hamburger").addEventListener('click', () =>{
+  navBar = document.querySelector(".nav-bar");
+  navBar.classList.toggle("active");
+})
+
+
 function subImg1(){
 
   let subImg1 = document.querySelector('#sub1');
@@ -73,54 +79,3 @@ const highestPrice = document.querySelector('#highest').value;
 
 
 
-/* function openModalBox(){
-  var modal = $('.modal, #mask');
-$('.open-modal').on('click', function() {
- modal.fadeIn(300);
-});
-$('.close-modal, #mask').on('click', function() {
- modal.fadeOut(800);
-});
-}
-openModalBox(); */
-/* var count = 0;
-var btn = document.getElementById("btn");
-var disp = document.getElementById("display");
-
-btn.onclick = function () {
-    count++;
-    disp.innerHTML = count;
-}
- */
-
-/* // Get the modal
-const modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-let btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-let span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-window.scroll({
-  top: 2500, 
-  left: 0, 
-  behavior: 'smooth'
-}); */

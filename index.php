@@ -26,9 +26,8 @@ include 'components/connect.php';
         <div class="home_text">
             <h1>Welcome to <br> San Juan, Batangas</h1>
             <p>
-                The Eastern Gateaway of Batangas. Home of the 
-                Lambayok Festival. There are more of our senses...<br> 
-                land, air and sea. Come and experience the nostalgic and 
+                The Eastern Gateaway of Batangas.<br>
+                Come and experience the nostalgic and 
                 fun San Juan.
             </p>
             <a href="#plan" class="home_btn">Let's go now</a>
@@ -116,7 +115,7 @@ include 'components/connect.php';
                     ?> 
                     <div class="weekend_gateaway">
                         <div class="exp_img_box">
-                        <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
+                        <a href="wg-quickview.php?pid=<?= $fetch_places['id']; ?>">
                             <img id="<?= $fetch_places['id']; ?>" tbl="weekend_gateaway" thumbnail src="img/tourist/<?= $fetch_places['img1']; ?>" >
                         </a>
                         </div>
@@ -157,7 +156,7 @@ include 'components/connect.php';
                     ?> 
                     <div class="weekend_gateaway">
                         <div class="exp_img_box">
-                        <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
+                        <a href="gs-quickview.php?pid=<?= $fetch_places['id']; ?>">
                             <img id="<?= $fetch_places['id']; ?>" tbl="gastronomic_exp" thumbnail src="img/tourist/<?= $fetch_places['img1']; ?>" alt="">
                         </a>
                         </div>
@@ -200,7 +199,7 @@ include 'components/connect.php';
                     ?> 
                     <div class="weekend_gateaway">
                         <div class="exp_img_box">
-                        <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
+                        <a href="at-quickview.php?pid=<?= $fetch_places['id']; ?>">
                             <img id="<?= $fetch_places['id']; ?>" tbl="attractions" thumbnail src="img/tourist/<?= $fetch_places['img1']; ?>" alt="">
                         </a>
                         </div>
@@ -244,7 +243,7 @@ include 'components/connect.php';
                     ?> 
                     <div class="weekend_gateaway">
                         <div class="exp_img_box">
-                        <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
+                        <a href="sv-quickview.php?pid=<?= $fetch_places['id']; ?>">
                             <img id="<?= $fetch_places['id']; ?>" tbl="souvenirs" thumbnail src="img/tourist/<?= $fetch_places['img1']; ?>" alt="">
                         </a>
                         </div>

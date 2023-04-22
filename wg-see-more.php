@@ -39,7 +39,7 @@ include 'components/connect.php';
             <div class="seemore_contents">
 
                 <?php 
-                    if(isset($_POST["sort"])){
+                    /* if(isset($_POST["sort"])){
                         $sortBy = $_POST["sort-option"];
                         $sql = '';
                         if ($sortBy == "mostViewed"){
@@ -47,9 +47,9 @@ include 'components/connect.php';
                         }
                         else if ($sortBy == "lowestPrice"){
                             $sql = "SELECT * FROM `weekend_gateaway` ORDER BY rate DESC";
-                        }else{
+                        }else{ */
                             $sql = "SELECT * FROM `weekend_gateaway` ORDER BY id";
-                        }
+                        
                         
                     $select_places = $conn->prepare($sql); 
                     $select_places->execute();
@@ -83,15 +83,15 @@ include 'components/connect.php';
                                 Total views:
                                 <p id="display_weekend_gateaway_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?> <i class="uil uil-eye icons_"></i></p> 
                             </div>
-                            <a href="quickview.php?pid=<?= $fetch_places['id']; ?>">
-                                <button id="<?= $fetch_places['id']; ?>" tbl="weekend_gateaway" button class="visit_btn">Visit Now</button>
+                            <a href="wg-quickview.php?pid=<?= $fetch_places['id']; ?>">
+                                <button id="<?= $fetch_places['id']; ?>" tbl="weekend_gateaway" button class="visit_btn">Details</button>
                             </a>
                         </div>
                     </div>
                 </div>
                 <?php
                 }
-                }     
+                  
                 }else{
                     echo '<p class="empty">No places found!</p>';
                 }
