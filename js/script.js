@@ -72,10 +72,16 @@ $('label').click(function() {
   $('#' + labelID).toggleClass('active');
 }); 
 
-const defaultSort = document.querySelector('#default').value;
-const mostViewed = document.querySelector('#viewed').value;
-const lowestPrice = document.querySelector('#lowest').value;
-const highestPrice = document.querySelector('#highest').value;
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+  }
+}
+
+// const defaultSort = document.querySelector('#default').value;
+// const mostViewed = document.querySelector('#viewed').value;
+// const lowestPrice = document.querySelector('#lowest').value;
+// const highestPrice = document.querySelector('#highest').value;
 
 
 

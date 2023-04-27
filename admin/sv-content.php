@@ -75,14 +75,14 @@ if(isset($_POST['add_content'])){
    $image_tmp_name_05 = $_FILES['img5']['tmp_name'];
    $image_folder_05 = '../img/tourist/'.$image_05;
 
-   $select_contents = $conn->prepare("SELECT * FROM `weekend_gateaway` WHERE place_name = ?");
+   $select_contents = $conn->prepare("SELECT * FROM `souvenirs` WHERE place_name = ?");
    $select_contents->execute([$name]);
 
    if($select_contents->rowCount() > 0){
       $message[] = 'content name already exist!';
    }else{
 
-      $insert_contents = $conn->prepare("INSERT INTO `weekend_gateaway`(place_name, location, details, rate, fb_link, ig_link, web_link, gmail_link1, gmail_link2, phone_link1, phone_link2, map_link, embedded_map, property_amenities, room_features, room_types, img1, img2, img3, img4, img5) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+      $insert_contents = $conn->prepare("INSERT INTO `souvenirs`(place_name, location, details, rate, fb_link, ig_link, web_link, gmail_link1, gmail_link2, phone_link1, phone_link2, map_link, embedded_map, property_amenities, room_features, room_types, img1, img2, img3, img4, img5) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
       $insert_contents->execute([$name, $location, $details, $price, $fb_link, $ig_link, $web_link, $gmail_link1, $gmail_link2, $phone_link1, $phone_link2, $map_link, $embedded_map, $property_amenities, $room_features, $room_types, $image_01, $image_02, $image_03, $image_04, $image_05]);
       $message[] = 'New Contents added!';
       /* if($insert_contents){
@@ -104,7 +104,7 @@ if(isset($_POST['add_content'])){
 if(isset($_GET['delete'])){
 
    $delete_id = $_GET['delete'];
-   $delete_content_image = $conn->prepare("SELECT * FROM `weekend_gateaway` WHERE id = ?");
+   $delete_content_image = $conn->prepare("SELECT * FROM `souvenirs` WHERE id = ?");
    $delete_content_image->execute([$delete_id]);
    $fetch_delete_image = $delete_content_image->fetch(PDO::FETCH_ASSOC);
    unlink('../img/tourist/'.$fetch_delete_image['img1']);
@@ -112,7 +112,7 @@ if(isset($_GET['delete'])){
    unlink('../img/tourist/'.$fetch_delete_image['img3']);
    unlink('../img/tourist/'.$fetch_delete_image['img4']);
    unlink('../img/tourist/'.$fetch_delete_image['img5']);
-   $delete_content = $conn->prepare("DELETE FROM `weekend_gateaway` WHERE id = ?");
+   $delete_content = $conn->prepare("DELETE FROM `souvenirs` WHERE id = ?");
    $delete_content->execute([$delete_id]);
    header("Location: /sjtours");
 }
@@ -140,6 +140,7 @@ if(isset($_GET['delete'])){
 <section class="add-products">
 
    <h1 class="heading">Add Content</h1>
+
    <form action="" method="post" enctype="multipart/form-data">
       <div class="flex">
          <div class="inputBox">
@@ -176,7 +177,7 @@ if(isset($_GET['delete'])){
          </div>
          <div class="inputBox">
             <span>Gmail 2  </span>
-            <input type="text" class="box"  ="500" placeholder="Enter Gmail 2" name="gmail_link2">
+            <input type="text" class="box"  maxlength="500" placeholder="Enter Gmail 2" name="gmail_link2">
          </div>
          <div class="inputBox">
             <span>Phone Number 1  </span>
@@ -184,7 +185,7 @@ if(isset($_GET['delete'])){
          </div>
          <div class="inputBox">
             <span>Phone Number 2  </span>
-            <input type="text" class="box"  ="12" placeholder="Enter Phone Number 2" name="phone_link2">
+            <input type="text" class="box"  maxlength="12" placeholder="Enter Phone Number 2" name="phone_link2">
          </div>
          <div class="inputBox">
             <span>Map Link  </span>
@@ -194,18 +195,18 @@ if(isset($_GET['delete'])){
             <span>Embedded Map Link  </span>
             <input type="text" class="box" required maxlength="1000" placeholder="Enter Embedded Map Link" name="embedded_map">
          </div>
-         <div class="inputBox">
+         <!-- <div class="inputBox">
             <span>Property Amenities  </span>
-            <input type="text" class="box"  maxlength="1000" placeholder="Enter Embedded Map Link" name="property_amenities">
+            <input type="text" class="box" required maxlength="1000" placeholder="Enter Embedded Map Link" name="property_amenities">
          </div>
          <div class="inputBox">
             <span>Room Features  </span>
-            <input type="text" class="box"  maxlength="1000" placeholder="Enter Embedded Map Link" name="room_features">
+            <input type="text" class="box" required maxlength="1000" placeholder="Enter Embedded Map Link" name="room_features">
          </div>
          <div class="inputBox">
             <span>Room Types  </span>
-            <input type="text" class="box"  maxlength="1000" placeholder="Enter Embedded Map Link" name="room_types">
-         </div>
+            <input type="text" class="box" required maxlength="1000" placeholder="Enter Embedded Map Link" name="room_types">
+         </div> -->
         <div class="inputBox">
             <span>Image 01  </span>
             <input type="file" name="img1" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" required>
@@ -241,7 +242,7 @@ if(isset($_GET['delete'])){
    <div class="box-container">
 
    <?php
-      $select_contents = $conn->prepare("SELECT * FROM `weekend_gateaway`");
+      $select_contents = $conn->prepare("SELECT * FROM `souvenirs`");
       $select_contents->execute();
       if($select_contents->rowCount() > 0){
          while($fetch_contents = $select_contents->fetch(PDO::FETCH_ASSOC)){ 
@@ -249,10 +250,9 @@ if(isset($_GET['delete'])){
    <div class="box">
       <img src="../img/tourist/<?= $fetch_contents['img1']; ?>" alt="">
       <div class="name"><?= $fetch_contents['place_name']; ?></div>
-      <div class="price">₱<span><?= $fetch_contents['rate']; ?></span></div>
       <div class="details"><span><?= $fetch_contents['details']; ?></span></div>
       <div class="flex-btn">
-         <a href="wg-update.php?update=<?= $fetch_contents['id']; ?>" class="option-btn">update</a>
+         <a href="sv-content.php?update=<?= $fetch_contents['id']; ?>" class="option-btn">update</a>
          <a href="wg-content.php?delete=<?= $fetch_contents['id']; ?>" class="delete-btn" onclick="return confirm('delete this content?');">delete</a>
       </div>
    </div>

@@ -256,7 +256,7 @@ include 'components/connect.php';
                                 <a href="<?= $fetch_places['web_link']; ?>" target="_blank"><i class='bx bx-globe icons_'></i></a>
                                 <!-- <a href="<?= $fetch_places['gmail_link']; ?>" target="_blank"><i class='bx bxs-envelope icons_'></i></a> -->
                                 <!-- <a href="<?= $fetch_places['phone_link']; ?>" target="_blank"><i class='bx bxs-phone icons_'></i></a> -->
-                                <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
+                                <a href="<?= $fetch_places['maps']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
                             </div>
                             <div class="view_count">
                                 <p id="display_souvenirs_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?></p>    
@@ -280,15 +280,13 @@ include 'components/connect.php';
     <div class="testimonials_container testimonial_grid">
         <div class="testimonials_content">
                 <div class="testimonial_img">
-                    <img src="img/juandelacruz.jpg" alt="">
+                    <img src="img/dp.png" alt="">
                 </div>  
                 <i class='bx bxs-quote-left icons_'></i>
-                <h3>Juan Dela Cruz</h3>
+                <h3>Ben Pasia</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                    nisi ut aliquip ex ea commodo consequat. 
+                Easy access to the city fell comfortable and relax why should i go in far side of the country? 
+                It’s here the beauty and affordable holiday in SanJuan, Batangas
                 </p>
                 <div class="ratings">
                     <i class='bx bxs-star ratings_'></i>
@@ -300,15 +298,14 @@ include 'components/connect.php';
         </div>
         <div class="testimonials_content">
                 <div class="testimonial_img">
-                    <img src="img/juandelacruz.jpg" alt="">
+                    <img src="img/dp.png" alt="">
                 </div>  
                 <i class='bx bxs-quote-left icons_'></i>
-                <h3>Juan Dela Cruz</h3>
+                <h3>Raniel Christian Ilagan</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                    nisi ut aliquip ex ea commodo consequat. 
+                Sobrang Daming tourist spot here in san juan. After this pandemic ,. Susulitin ko tlaga ang Vacation leave ko dito.  
+                I am Leaving in Rosario and Lipa City on my previous work, pero pag tung tong ko dito sa san juan. 
+                lahat ng feel na feel ko. now i am working here at ndi naman ako nag aadjust ng sobra.. see you Laiya Beaches
                 </p>
                 <div class="ratings">
                     <i class='bx bxs-star ratings_'></i>
@@ -320,15 +317,13 @@ include 'components/connect.php';
         </div>
         <div class="testimonials_content">
                 <div class="testimonial_img">
-                    <img src="img/juandelacruz.jpg" alt="">
+                    <img src="img/dp.png" alt="">
                 </div>  
                 <i class='bx bxs-quote-left icons_'></i>
-                <h3>Juan Dela Cruz</h3>
+                <h3>Editha Barcelona Poyaoan</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                    nisi ut aliquip ex ea commodo consequat. 
+                i recommend all of the beautiful beaches in my hometown... especially the hospitality of our fellow men...
+                i love san juan...more power to our tourism...
                 </p>
                 <div class="ratings">
                     <i class='bx bxs-star ratings_'></i>

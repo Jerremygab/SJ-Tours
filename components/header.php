@@ -2,7 +2,7 @@
     
     
     <div class="logo">
-        <img src="img/logo.png">
+        <a href="index.php"><img src="img/logo.png"></a>
     </div>
     <div class="hamburger">
         <i class='bx bx-menu icons_'></i>

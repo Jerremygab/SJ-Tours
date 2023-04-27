@@ -55,7 +55,7 @@ if(!isset($admin_id)){
 
       <div class="box">
          <h3>Culture And Attractions</h3>
-         <a href="ca-content.php" class="btn">Manage</a>
+         <a href="at-content.php" class="btn">Manage</a>
       </div>
 
       <div class="box">

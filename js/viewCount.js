@@ -15,6 +15,7 @@ const addViewCount = (id, tbl)=> {
     }
     xhr.onload = () => {
         const data =  JSON.parse(xhr.response);
+        console.log(data);
         display.innerHTML = data;
     }
     xhr.send(formData);

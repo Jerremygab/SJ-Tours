@@ -112,6 +112,7 @@ textarea {
     resize: none;
     width: 100%;
 }
+
 /* ============================== */
 
     /* REUSABLE  */
@@ -391,7 +392,7 @@ header.sticky{
 }
 
 .exp_img_box img{
-    width: 100%;
+    width: 400px;
     height: 190px;
     border-radius: .5rem;
     transition: all .4s ease 0s;
@@ -674,6 +675,7 @@ iframe{
     border-radius: 1rem;
     box-shadow: -1px 6px 40px 0px rgba(0,0,0,0.10);
     padding: 1rem;
+    width: 33%;
 }
 .testimonials_content img{
     position: absolute;
@@ -858,6 +860,12 @@ table td{
     font-size: var(--h3-font-size);
     color: var(--primary-color)
 }
+.right_side p{
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
 .options form{
     display: flex;
@@ -878,6 +886,8 @@ table td{
     width: 35%;
     padding: .5rem 0;
 }
+
+
 
 
 
@@ -1014,6 +1024,9 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
         width: 150px;
         height: 110px;
     }
+    .exp_img_box img {
+        width: 320px;
+    }
 }
 /* For medium devices */
 /* 582 X 658 */
@@ -1044,6 +1057,9 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
         width: 250px;
         height: 170px;
     }
+    .exp_img_box img {
+        width: 470px;
+    }
 }
 
 /* 780 x 658 */
@@ -1056,6 +1072,7 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
     }
     .exp_img_box img {
         height: 130px;
+        width: 250px;
     }
     .exp_grid {
         flex-direction: row;
@@ -1063,6 +1080,7 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
         justify-content: center;
         gap: 2rem;
     }
+    
     .similar_places .category {
         display: block;
     }
@@ -1113,7 +1131,10 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
         display: flex;
         align-items: center;
         flex-wrap: nowrap;
-        gap: 1rem;
+        gap: 2rem;
+    }
+    .bg_container {
+        padding: 2rem 2rem 4rem;
     }
     .more_grid .exp_img_box img {
         width: 350px;
@@ -1188,7 +1209,7 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
         width: 12%;
     }
     .more_grid .exp_img_box img {
-        width: 650px;
+        width: 500px;
     }
 } 
 

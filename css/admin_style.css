@@ -483,7 +483,13 @@ section{
    font-size: 1.5rem;
    color:#777;
    line-height: 2;
+   display: -webkit-box;
+   -webkit-line-clamp:8;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
 }
+
+
 
 .update-product form{
    background-color:#fff;

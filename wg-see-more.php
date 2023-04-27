@@ -12,6 +12,7 @@ include 'components/connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visit San Juan</title>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
     <header>
@@ -27,7 +28,7 @@ include 'components/connect.php';
                 <div class="options">
                       
                 <form action="" method="post">
-                    <select name="sort-option" id="seemore_sort" onchange="sortSubmit()">
+                    <select name="sort-option" id="seemore_sort">
                         <option value="" disabled selected>--Sort By--</option>
                         <option value="mostViewed">Most Viewed</option>
                         <option value="lowestPrice">Lowest Price</option>
@@ -36,7 +37,7 @@ include 'components/connect.php';
             
                 </div>
             </div>
-            <div class="seemore_contents">
+            <div id="seemore_contents" class="seemore_contents">
 
                 <?php 
                     /* if(isset($_POST["sort"])){
@@ -57,17 +58,19 @@ include 'components/connect.php';
                     while($fetch_places = $select_places->fetch(PDO::FETCH_ASSOC)){
                     
                 ?>
-                
+
                 <div class="bg_container">
                     <div class="exp_place">
                         <?= $fetch_places['place_name']; ?>
                         <div class="exp_links">
-                                <a href="<?= $fetch_places['fb_link']; ?>" target="_blank"><i class='bx bxl-facebook-circle icons_'></i></a>
-                                <a href="<?= $fetch_places['web_link']; ?>" target="_blank"><i class='bx bx-globe icons_'></i></a>
-                                <!-- <a href="<?= $fetch_places['gmail_link']; ?>" target="_blank"><i class='bx bxs-envelope icons_'></i></a> -->
-                                <!-- <a href="<?= $fetch_places['phone_link']; ?>" target="_blank"><i class='bx bxs-phone icons_'></i></a> -->
-                                <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
-                            </div>
+                            <a href="<?= $fetch_places['fb_link']; ?>" target="_blank">
+                                <i class='bx bxl-facebook-circle icons_'></i>
+                            </a>
+                            <a href="<?= $fetch_places['web_link']; ?>" target="_blank"><i class='bx bx-globe icons_'></i></a>
+                            <!-- <a href="<?= $fetch_places['gmail_link']; ?>" target="_blank"><i class='bx bxs-envelope icons_'></i></a> -->
+                            <!-- <a href="<?= $fetch_places['phone_link']; ?>" target="_blank"><i class='bx bxs-phone icons_'></i></a> -->
+                            <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
+                        </div>
                     </div>
                     <div class="more_grid">
                         <div class="left_side">
@@ -77,13 +80,13 @@ include 'components/connect.php';
                         </div>
                         <div class="right_side">
 
-                            <p><?= substr($fetch_places['details'], 0, 260); ?>...</p><br>
+                            <p><?= $fetch_places['details'] ?></p><br>
                             <div class="details">Rate starts at: <br><b>PHP <?= $fetch_places['rate']; ?>.00</b></div>
                             <div class="details">
                                 Total views:
                                 <p id="display_weekend_gateaway_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?> <i class="uil uil-eye icons_"></i></p> 
                             </div>
-                            <a href="wg-quickview.php?pid=<?= $fetch_places['id']; ?>">
+                            <a href="wg-quickview.php?pid=<?= $fetch_places['id']; ?>" target="_blank">
                                 <button id="<?= $fetch_places['id']; ?>" tbl="weekend_gateaway" button class="visit_btn">Details</button>
                             </a>
                         </div>
@@ -100,9 +103,14 @@ include 'components/connect.php';
         </div>
     </section>
     <?php include 'components/footer.php'; ?>
-
-    <script src="js/script.js"></script>
     <script src="js/viewCount.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        tblPage="weekend_gateaway";
+    </script>
+    
+    <script src="js/seeMore.js"></script>
+    
 </body>
 </html>
-      
+                

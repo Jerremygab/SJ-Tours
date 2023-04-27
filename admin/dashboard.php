@@ -42,9 +42,14 @@ if(!isset($admin_id)){
       <br>
       <br>
    <div class="box-container">
-
+               <?php
+                  $select_places = $conn->prepare("SELECT * FROM `admins`"); 
+                  $select_places->execute();
+                  if($select_places->rowCount() > 0){
+                  while($fetch_places = $select_places->fetch(PDO::FETCH_ASSOC)){
+               ?> 
       <div class="box">
-         <h3>Welcome </h3>
+         <h3>Welcome <?= $fetch_places['name']; ?> </h3>
          <a href="update_profile.php" class="btn">Update profile</a>
       </div>
 
@@ -62,7 +67,12 @@ if(!isset($admin_id)){
          <h3>all Contents</h3>
          <a href="contents.php" class="btn">See Contents</a>
       </div>
-
+               <?php
+                    }
+                    }else{
+                        echo '<p class="empty">No places found!</p>';
+                    }
+               ?>
    </div>
 
 </section>

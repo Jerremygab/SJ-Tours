@@ -103,6 +103,11 @@ include 'components/connect.php';
 
     <script src="js/script.js"></script>
     <script src="js/viewCount.js"></script>
+    <script>
+    tblPage="weekend_gateaway";
+    </script>
+
+    <script src="js/seeMore.js"></script>
 </body>
 </html>
       
