@@ -3,7 +3,7 @@
 include 'components/connect.php';
 
 
-if(isset($_POST['send'])){
+if(isset($_POST['submit'])){
 
    $pid = $_POST['place_id'];
    $pid = filter_var($pid, FILTER_SANITIZE_STRING);
@@ -31,7 +31,6 @@ if(isset($_POST['send'])){
       $message[] = 'Sent message successfully!';
 
    }
-
 }
 
 ?>
@@ -69,29 +68,46 @@ if(isset($_POST['send'])){
                <form action="#" method="post" id="contact_form">
                   <div class="fullname">
                     <label for="name"></label>
-                    <input type="text" placeholder="My name is" name="fullname" id="name_input" required>
+                    <input type="text" placeholder="Name" name="fullname" id="name_input" >
                   </div>
                   <div class="email">
                     <label for="email"></label>
-                    <input type="email" placeholder="My e-mail is" name="email" id="email_input" required>
+                    <input type="email" placeholder="Email" name="email1" id="email_input" required>
+                    <textarea class="d-none" name="email" cols="30" rows="5"><?= $fetch_places['gmail_link1']; ?></textarea>
                   </div>
                   <div class="telephone">
                     <label for="number"></label>
-                    <input type="number" placeholder="My number is" name="number" id="telephone_input" required maxlength="11">
+                    <input type="number" placeholder="Phone number" name="number" id="telephone_input" maxlength="100">
                   </div>
                   <div class="message">
                     <label for="message"></label>
                     <textarea name="message" placeholder="I'd like to chat about" id="message_input" cols="30" rows="5" required></textarea>
                   </div>
                   <div class="submit">
-                    <input type="submit" name="send" value="Send Message" id="form_button" onclick="messageSent()"/>
+                    <input type="submit" name="submit" value="Send Message" id="form_button" onclick="messageSent()"/>
                   </div>
 
-                  <div style="display: none;">
+                  <div class="d-none">
                     <textarea name="place_name" cols="30" rows="5"><?= $fetch_places['place_name']; ?></textarea>
                     <textarea name="place_id" cols="30" rows="5"><?= $fetch_places['id']; ?></textarea>
                   </div>
 
+                  <?php
+                  if(isset($_POST['submit'])){
+                    $url = "https://script.google.com/macros/s/AKfycbx8uDN17odVqSVDy3PVwXARfBZWHvtRYml-nRjlCdM5lpEEkNroADXDZhmcmdG5gKRDMA/exec";
+                    $ch = curl_init($url);
+                    curl_setopt_array($ch,[
+                     CURLOPT_RETURNTRANSFER => true,
+                     CURLOPT_POSTFIELDS => http_build_query([
+                       "recipient" => $_POST['email'],
+                       "subject" => $_POST['email1'],
+                       "body" => $_POST['message']
+                     ])
+                     ]);
+                     $result = curl_exec($ch);
+                    //  echo $result;
+                  }
+                  ?>
                 </form>
             </div>
          </div>

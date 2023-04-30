@@ -39,6 +39,7 @@ include 'components/connect.php'
                        if(isset($_POST['search_box']) OR isset($_POST['search_btn'])){
                         $search_box = $_POST['search_box'];
                         $select_places = $conn->prepare("SELECT * FROM `weekend_gateaway` WHERE search LIKE '%{$search_box}%'");
+                        $select_places = $conn->prepare("SELECT * FROM `weekend_gateaway` WHERE place_name LIKE '%{$search_box}%'");
                         $select_places->execute();
                         if($select_places->rowCount() > 0){
                          while($fetch_places = $select_places->fetch(PDO::FETCH_ASSOC)){
@@ -83,6 +84,7 @@ include 'components/connect.php'
                         if(isset($_POST['search_box']) OR isset($_POST['search_btn'])){
                             $search_box = $_POST['search_box'];
                             $select_places = $conn->prepare("SELECT * FROM `gastronomic_exp` WHERE search LIKE '%{$search_box}%'"); 
+                            $select_places = $conn->prepare("SELECT * FROM `gastronomic_exp` WHERE place_name LIKE '%{$search_box}%'"); 
                             $select_places->execute();
                             if($select_places->rowCount() > 0){
                              while($fetch_places = $select_places->fetch(PDO::FETCH_ASSOC)){
@@ -129,6 +131,7 @@ include 'components/connect.php'
                         if(isset($_POST['search_box']) OR isset($_POST['search_btn'])){
                             $search_box = $_POST['search_box'];
                             $select_places = $conn->prepare("SELECT * FROM `attractions` WHERE search LIKE '%{$search_box}%'"); 
+                            $select_places = $conn->prepare("SELECT * FROM `attractions` WHERE place_name LIKE '%{$search_box}%'"); 
                             $select_places->execute();
                             if($select_places->rowCount() > 0){
                              while($fetch_places = $select_places->fetch(PDO::FETCH_ASSOC)){
@@ -176,6 +179,7 @@ include 'components/connect.php'
                         if(isset($_POST['search_box']) OR isset($_POST['search_btn'])){
                         $search_box = $_POST['search_box'];
                         $select_places = $conn->prepare("SELECT * FROM `souvenirs` WHERE search LIKE '%{$search_box}%'"); 
+                        $select_places = $conn->prepare("SELECT * FROM `souvenirs` WHERE place_name LIKE '%{$search_box}%'"); 
                         $select_places->execute();
                         if($select_places->rowCount() > 0){
                             while($fetch_places = $select_places->fetch(PDO::FETCH_ASSOC)){

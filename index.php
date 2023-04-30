@@ -60,7 +60,7 @@ include 'components/connect.php';
                 </a> 
             </div>
             <div class="plan_container_box">
-                <a href="">
+                <a href="index.php#experience">
                     <div class="plan_container_img">
                         <i class='bx bx-run icons_' ></i>
                     </div>
@@ -68,7 +68,7 @@ include 'components/connect.php';
                 </a>
             </div>
             <div class="plan_container_box">
-                <a href="">
+                <a href="index.php#experience">
                     <div class="plan_container_img">
                         <i class='bx bxs-hotel icons_' ></i>
                     </div>
