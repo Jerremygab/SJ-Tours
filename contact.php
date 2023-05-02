@@ -105,7 +105,6 @@ if(isset($_POST['submit'])){
                      ])
                      ]);
                      $result = curl_exec($ch);
-                    //  echo $result;
                   }
                   ?>
                 </form>

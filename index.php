@@ -11,9 +11,13 @@ include 'components/connect.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap3.4.1.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;1,200;1,800&family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rowdies:wght@300;700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="bootstrap/js/jquery3.6.4.min.js"></script>
+    <script src="bootstrap/js/bootstrap3.4.1.min.js"></script>
+    
     <title>San Juan Travel</title>
 </head>
 <body>
@@ -126,6 +130,8 @@ include 'components/connect.php';
                             <div class="exp_links">
                                 <a href="<?= $fetch_places['fb_link']; ?>" target="_blank"><i class='bx bxl-facebook-circle icons_'></i></a>
                                 <a href="<?= $fetch_places['web_link']; ?>" target="_blank"><i class='bx bx-globe icons_'></i></a>
+                                <i class='bx bxs-envelope icons_' data-toggle="modal" data-target="#myModal"></i>
+                                <i class='bx bxs-phone icons_' data-toggle="modal" data-target="#myModal"></i>
                                 <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
                             </div>
                             <div class="view_count">
@@ -133,6 +139,30 @@ include 'components/connect.php';
                                 <i class="uil uil-eye icons_"></i>                          
                             </div>
                         </div>
+
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Get In Touch</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p><b>Email us at:</b></p>
+                                        <p><?= $fetch_places['gmail_link1']; ?></p>
+                                        <p><?= $fetch_places['gmail_link2']; ?></p>
+                                        <hr>
+                                        <p><b>Call us at:</b></p>
+                                        <p><?= $fetch_places['phone_link1']; ?></p>
+                                        <p><?= $fetch_places['phone_link2']; ?></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <?php
                     }

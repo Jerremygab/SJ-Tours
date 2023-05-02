@@ -89,6 +89,20 @@ include 'components/connect.php';
                             <a href="wg-quickview.php?pid=<?= $fetch_places['id']; ?>" target="_blank">
                                 <button id="<?= $fetch_places['id']; ?>" tbl="weekend_gateaway" button class="visit_btn">Details</button>
                             </a>
+                            <div class="tag_container">
+                                <div class="tag_content">
+                                    <i class='bx bxs-purchase-tag icons_'></i>
+                                    <p>Budget Friendly</p>
+                                </div>
+                                <div class="tag_content">
+                                    <i class='bx bxs-star icons_'></i>
+                                    <p>Highly Recommended</p>
+                                </div>
+                                <div class="tag_content">
+                                    <i class='bx bxs-dog icons_' ></i>
+                                    <p>Pet Friendly</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

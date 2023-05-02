@@ -23,6 +23,9 @@
                 <a href="travel-information.php">Travel Information</a>
             </li>
             <li>
+                <a href="maps.php">Contact Us</a>
+            </li>
+            <li>
                 <a href="search.php">search</a>
             </li>
         </ul>

@@ -887,8 +887,23 @@ table td{
     width: 35%;
     padding: .5rem 0;
 }
-
-
+.tag_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+.tag_content {
+    display: flex;
+    background: var(--bg-color);
+    padding: 10px;
+    font-size: 12px;
+    font-weight: var(--font-semi-bold);
+    border-radius: 5px;
+    box-shadow: -1px 6px 40px 0px rgba(0,0,0,0.10);
+    gap: 0.5rem;
+}
 
 
 
@@ -1103,7 +1118,7 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
 /* 1058 X 658 */
 @media screen and (min-width: 1024px) {
     .see-more .container{
-        padding: 2rem ;
+        padding: 0 ;
     }
     .navbar_ a {
         display: block;
@@ -1135,7 +1150,7 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
         gap: 2rem;
     }
     .bg_container {
-        padding: 2rem 2rem 4rem;
+        padding: 2rem 1rem 4rem;
     }
     .more_grid .exp_img_box img {
         width: 350px;
@@ -1155,7 +1170,7 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
     .contact_ .contact_grid {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-evenly;
     }
     .contact_content form {
         padding: 0;
@@ -1211,6 +1226,12 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
     }
     .more_grid .exp_img_box img {
         width: 600px;
+    }
+} 
+@media screen and (min-width: 1920px) {
+    
+    .more_grid .exp_img_box img {
+        width: 700px;
     }
 } 
 
