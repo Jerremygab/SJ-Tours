@@ -28,9 +28,9 @@ include 'components/connect.php';
     
     <section class="home_ section" id="home">
 
-        <!-- <video autoplay loop muted plays-inline class="bg-video">
-            <source src="img/clip.mp4" type="video/mp4">
-        </video> -->
+        <video autoplay loop muted plays-inline class="bg-video">
+            <source src="img/resort video clip edited 2.mp4 " type="video/mp4">
+        </video>
 
         <div class="home_text">
             <h1>Welcome to <br> San Juan, Batangas</h1>
