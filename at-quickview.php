@@ -56,7 +56,7 @@ include 'components/connect.php';
                 <a href="<?= $fetch_places['map_link']; ?>">
                     <div class="details"><?= $fetch_places['location']; ?></div>
                 </a>
-                <div class="details"><?= $fetch_places['description']; ?></div>
+                <div class="details"><?= $fetch_places['details']; ?></div>
                 
 
                 <!-- <div class="amenities">

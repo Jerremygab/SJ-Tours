@@ -17,8 +17,6 @@ if(isset($_POST['update'])){
    $name = filter_var($name, FILTER_SANITIZE_STRING);
    $location = $_POST['location'];
    $location = filter_var($location, FILTER_SANITIZE_STRING);
-   $price = $_POST['rate'];
-   $price = filter_var($price, FILTER_SANITIZE_STRING);
    $details = $_POST['details'];
    $details = filter_var($details, FILTER_SANITIZE_STRING);
    $fb_link = $_POST['fb_link'];
@@ -46,11 +44,11 @@ if(isset($_POST['update'])){
 //    $offering = $_POST['offering'];
 //    $offering = filter_var($offering, FILTER_SANITIZE_STRING);
 
-   $update_content = $conn->prepare("UPDATE `souvenirs` SET place_name = ?, rate = ?, details = ?, location = ?, fb_link = ?, ig_link = ?, 
+   $update_content = $conn->prepare("UPDATE `souvenirs` SET place_name = ?, details = ?, location = ?, fb_link = ?, ig_link = ?, 
                                                                    web_link = ?, gmail_link1 = ?, gmail_link2 = ?, phone_link1 = ?, phone_link2 = ?, map_link = ?, 
                                                                    embedded_map = ?
                                                                    WHERE id = ?");
-   $update_content->execute([$name, $price, $details,$location,$fb_link,$ig_link,$web_link,$gmail_link1,$gmail_link2,$phone_link2, $map_link,$embedded_map, $pid]);
+   $update_content->execute([$name, $details,$location,$fb_link,$ig_link,$web_link,$gmail_link1,$gmail_link2,$phone_link1,$phone_link2, $map_link,$embedded_map, $pid]);
 
    $message[] = 'Content updated successfully!';
 
@@ -200,8 +198,8 @@ if(isset($_POST['update'])){
       </div>
       <span>update name</span>
       <input type="text" name="place_name" required class="box" maxlength="100" placeholder="enter content name" value="<?= $fetch_contents['place_name']; ?>">
-      <span>update price</span>
-      <input type="number" name="rate" required class="box" min="0" max="9999999999" placeholder="enter price" onkeypress="if(this.value.length == 10) return false;" value="<?= $fetch_contents['rate']; ?>">
+      <!-- <span>update price</span>
+      <input type="number" name="rate" required class="box" min="0" max="9999999999" placeholder="enter price" onkeypress="if(this.value.length == 10) return false;" value="<?= $fetch_contents['rate']; ?>"> -->
       <span>update details</span>
       <textarea name="details" class="box" required cols="30" rows="10"><?= $fetch_contents['details']; ?></textarea>
       <span>update location</span>
@@ -209,27 +207,27 @@ if(isset($_POST['update'])){
       <span>update FB Link</span>
       <input type="text" name="fb_link" required class="box" maxlength="100" placeholder="enter FB Link" value="<?= $fetch_contents['fb_link']; ?>">
       <span>update WEB Link</span>
-      <input type="text" name="web_link" required class="box" maxlength="100" placeholder="enter WEB Link" value="<?= $fetch_contents['ig_link']; ?>">
+      <input type="text" name="web_link"  class="box" maxlength="100" placeholder="enter WEB Link" value="<?= $fetch_contents['web_link']; ?>">
       <span>update IG Link</span>
-      <input type="text" name="ig_link" required class="box" maxlength="100" placeholder="enter IG Link" value="<?= $fetch_contents['web_link']; ?>">
+      <input type="text" name="ig_link"  class="box" maxlength="100" placeholder="enter IG Link" value="<?= $fetch_contents['ig_link']; ?>">
       <span>update Gmail 1</span>
       <input type="text" name="gmail_link1" required class="box" maxlength="100" placeholder="enter Gmail 1" value="<?= $fetch_contents['gmail_link1']; ?>">
       <span>update Gmail 2</span>
-      <input type="text" name="gmail_link2" required class="box" maxlength="100" placeholder="enter Gmail 2" value="<?= $fetch_contents['gmail_link2']; ?>">
+      <input type="text" name="gmail_link2"  class="box" maxlength="100" placeholder="enter Gmail 2" value="<?= $fetch_contents['gmail_link2']; ?>">
       <span>update Phone 1</span>
       <input type="text" name="phone_link1" required class="box" maxlength="100" placeholder="enter Phone 1" value="<?= $fetch_contents['phone_link1']; ?>">
       <span>update Phone 2</span>
-      <input type="text" name="phone_link2" required class="box" maxlength="100" placeholder="enter Phone 2" value="<?= $fetch_contents['phone_link2']; ?>">
+      <input type="text" name="phone_link2"  class="box" maxlength="100" placeholder="enter Phone 2" value="<?= $fetch_contents['phone_link2']; ?>">
       <span>update Map link</span>
       <input type="text" name="map_link" required class="box" maxlength="100" placeholder="enter Map Link" value="<?= $fetch_contents['map_link']; ?>">
       <span>update Embedded Map</span>
-      <input type="text" name="embedded_map" required class="box" maxlength="100" placeholder="enter Embedded Map" value="<?= $fetch_contents['embedded_map']; ?>">
+      <input type="text" name="embedded_map"  class="box" maxlength="100" placeholder="enter Embedded Map" value="<?= $fetch_contents['embedded_map']; ?>">
       <!-- <span>update Dining services</span>
-      <input type="text" name="diet" required class="box" maxlength="100" placeholder="enter Property Amenities" value="<?= $fetch_contents['diets']; ?>">
+      <input type="text" name="diet"  class="box" maxlength="100" placeholder="enter Property Amenities" value="<?= $fetch_contents['diets']; ?>">
       <span>update Service Features</span>
-      <input type="text" name="features" required class="box" maxlength="100" placeholder="enter Room Features" value="<?= $fetch_contents['features']; ?>">
+      <input type="text" name="features"  class="box" maxlength="100" placeholder="enter Room Features" value="<?= $fetch_contents['features']; ?>">
       <span>update Offerings</span>
-      <input type="text" name="offerings" required class="box" maxlength="100" placeholder="enter Room Types" value="<?= $fetch_contents['offering']; ?>"> -->
+      <input type="text" name="offerings"  class="box" maxlength="100" placeholder="enter Room Types" value="<?= $fetch_contents['offering']; ?>"> -->
       <span>update image 01</span>
       <input type="file" name="img1" accept="image/jpg, image/jpeg, image/png, image/webp" class="box">
       <span>update image 02</span>

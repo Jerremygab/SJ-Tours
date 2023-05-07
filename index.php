@@ -29,7 +29,7 @@ include 'components/connect.php';
     <section class="home_ section" id="home">
 
         <video autoplay loop muted plays-inline class="bg-video">
-            <source src="img/resort video clip edited 2.mp4 " type="video/mp4">
+            <source src="img/clip.mp4 " type="video/mp4">
         </video>
 
         <div class="home_text">
@@ -223,7 +223,7 @@ include 'components/connect.php';
             <div class="what_to_do">
                 <div class="exp_category">
                     <h4>Cultural and Natural Attractions</h4>
-                    <a href="#">See more</a>
+                    <a href="at-see-more.php">See more</a>
                 </div>
                 <div class="exp_grid">
                     <?php
@@ -267,7 +267,7 @@ include 'components/connect.php';
             <div class="what_to_do">
                 <div class="exp_category">
                     <h4>Souvenirs</h4>
-                    <a href="#">See more</a>
+                    <a href="sv-see-more.php">See more</a>
                 </div>
                 <div class="exp_grid">
                     <?php
@@ -291,7 +291,7 @@ include 'components/connect.php';
                                 <a href="<?= $fetch_places['web_link']; ?>" target="_blank"><i class='bx bx-globe icons_'></i></a>
                                 <!-- <a href="<?= $fetch_places['gmail_link']; ?>" target="_blank"><i class='bx bxs-envelope icons_'></i></a> -->
                                 <!-- <a href="<?= $fetch_places['phone_link']; ?>" target="_blank"><i class='bx bxs-phone icons_'></i></a> -->
-                                <a href="<?= $fetch_places['maps']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
+                                <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
                             </div>
                             <div class="view_count">
                                 <p id="display_souvenirs_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?></p>    

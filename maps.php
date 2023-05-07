@@ -110,7 +110,7 @@ if(isset($_POST['submit'])){
 
                   <div class="d-none">
                     <textarea name="place_name" cols="30" rows="5">juanderfulsanjuan</textarea>
-                    <textarea name="place_id" cols="30" rows="5">100</textarea>
+                    <textarea name="place_id" cols="30" rows="5">0</textarea>
                   </div>
 
                   <?php

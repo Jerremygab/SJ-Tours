@@ -8,16 +8,10 @@ $admin_id = $_SESSION['admin_id'];
 
 if(!isset($admin_id)){
    header('location:admin_login.php');
-};
-
-if(isset($_GET['delete'])){
-   $delete_id = $_GET['delete'];
-   $delete_message = $conn->prepare("DELETE FROM `contact_form` WHERE id = ?");
-   $delete_message->execute([$delete_id]);
-   header('location:messages.php');
 }
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +19,7 @@ if(isset($_GET['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>messages</title>
+   <title>Dashboard</title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
@@ -37,37 +31,32 @@ if(isset($_GET['delete'])){
 <?php include '../components/admin_header.php'; ?>
 
 <section class="dashboard">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+   <h1 class="heading">ADMIN PANEL</h1>
+      <br>
+      <br>
+      <br>
+   <div class="box-container">
 
-<h1 class="heading">messages</h1>
+      <div class="box">
+         <h3>Page Messages</h3>
+         <a href="page-messages.php" class="btn">See all</a>
+      </div>
 
-<div class="box-container">
+      <div class="box">
+         <h3>Content Messages</h3>
+         <a href="content-messages.php" class="btn">See all</a>
+      </div>
 
-   <?php
-      $select_messages = $conn->prepare("SELECT * FROM `contact_form` ORDER BY place_id");
-      $select_messages->execute();
-      if($select_messages->rowCount() > 0){
-         while($fetch_message = $select_messages->fetch(PDO::FETCH_ASSOC)){
-   ?>
-   <div class="box">
-   
-   <p><b><?= $fetch_message['place_name']; ?></b></p>
-   <p> Fullname : <span><?= $fetch_message['fullname']; ?></span></p>
-   <p> Number : <span><?= $fetch_message['number']; ?></span></p>
-   <p> Email : <span><?= $fetch_message['email']; ?></span></p>
-   <p> Message : <span><?= $fetch_message['message']; ?></span></p>
-   <a href="messages.php?delete=<?= $fetch_message['id']; ?>" onclick="return confirm('delete this message?');" class="delete-btn">delete</a>
+
    </div>
-   <?php
-         }
-      }else{
-         echo '<p class="empty">you have no messages</p>';
-      }
-   ?>
-
-</div>
 
 </section>
-
 <script src="../js/admin_script.js"></script>
    
 </body>

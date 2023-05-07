@@ -23,7 +23,7 @@ include 'components/connect.php';
     <section class="section see-more" >
         <div class="seemore_container container">
             <div class="title_">Gastronomic experience</div>
-            <div class="dropdown">
+           <!--  <div class="dropdown">
                 <div class="options">
                       
                 <form action="" method="post">
@@ -35,19 +35,11 @@ include 'components/connect.php';
                 </form>
             
                 </div>
-            </div>
+            </div> -->
             <div class="seemore_contents">
 
                 <?php 
-                    /* if(isset($_POST["sort"])){
-                        $sortBy = $_POST["sort-option"];
-                        $sql = '';
-                        if ($sortBy == "mostViewed"){
-                            $sql = "SELECT * FROM `weekend_gateaway` ORDER BY views ASC";
-                        }
-                        else if ($sortBy == "lowestPrice"){
-                            $sql = "SELECT * FROM `weekend_gateaway` ORDER BY rate DESC";
-                        }else{ */
+                    
                             $sql = "SELECT * FROM `gastronomic_exp` ORDER BY id";
                         
                         

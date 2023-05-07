@@ -252,8 +252,8 @@ if(isset($_GET['delete'])){
       <div class="price">₱<span><?= $fetch_contents['rate']; ?></span></div>
       <div class="details"><span><?= $fetch_contents['details']; ?></span></div>
       <div class="flex-btn">
-         <a href="gs-content.php?update=<?= $fetch_contents['id']; ?>" class="option-btn">update</a>
-         <a href="wg-content.php?delete=<?= $fetch_contents['id']; ?>" class="delete-btn" onclick="return confirm('delete this content?');">delete</a>
+         <a href="gs-update.php?update=<?= $fetch_contents['id']; ?>" class="option-btn">update</a>
+         <a href="gs-content.php?delete=<?= $fetch_contents['id']; ?>" class="delete-btn" onclick="return confirm('delete this content?');">delete</a>
       </div>
    </div>
    <?php

@@ -209,27 +209,27 @@ if(isset($_POST['update'])){
       <span>update FB Link</span>
       <input type="text" name="fb_link" required class="box" maxlength="100" placeholder="enter FB Link" value="<?= $fetch_contents['fb_link']; ?>">
       <span>update WEB Link</span>
-      <input type="text" name="web_link" required class="box" maxlength="100" placeholder="enter WEB Link" value="<?= $fetch_contents['ig_link']; ?>">
+      <input type="text" name="web_link"  class="box" maxlength="100" placeholder="enter WEB Link" value="<?= $fetch_contents['ig_link']; ?>">
       <span>update IG Link</span>
-      <input type="text" name="ig_link" required class="box" maxlength="100" placeholder="enter IG Link" value="<?= $fetch_contents['web_link']; ?>">
+      <input type="text" name="ig_link"  class="box" maxlength="100" placeholder="enter IG Link" value="<?= $fetch_contents['web_link']; ?>">
       <span>update Gmail 1</span>
-      <input type="text" name="gmail_link1" required class="box" maxlength="100" placeholder="enter Gmail 1" value="<?= $fetch_contents['gmail_link1']; ?>">
+      <input type="text" name="gmail_link1"  class="box" maxlength="100" placeholder="enter Gmail 1" value="<?= $fetch_contents['gmail_link1']; ?>">
       <span>update Gmail 2</span>
-      <input type="text" name="gmail_link2" required class="box" maxlength="100" placeholder="enter Gmail 2" value="<?= $fetch_contents['gmail_link2']; ?>">
+      <input type="text" name="gmail_link2"  class="box" maxlength="100" placeholder="enter Gmail 2" value="<?= $fetch_contents['gmail_link2']; ?>">
       <span>update Phone 1</span>
-      <input type="text" name="phone_link1" required class="box" maxlength="100" placeholder="enter Phone 1" value="<?= $fetch_contents['phone_link1']; ?>">
+      <input type="text" name="phone_link1"  class="box" maxlength="100" placeholder="enter Phone 1" value="<?= $fetch_contents['phone_link1']; ?>">
       <span>update Phone 2</span>
-      <input type="text" name="phone_link2" required class="box" maxlength="100" placeholder="enter Phone 2" value="<?= $fetch_contents['phone_link2']; ?>">
+      <input type="text" name="phone_link2"  class="box" maxlength="100" placeholder="enter Phone 2" value="<?= $fetch_contents['phone_link2']; ?>">
       <span>update Map link</span>
       <input type="text" name="map_link" required class="box" maxlength="100" placeholder="enter Map Link" value="<?= $fetch_contents['map_link']; ?>">
       <span>update Embedded Map</span>
       <input type="text" name="embedded_map" required class="box" maxlength="100" placeholder="enter Embedded Map" value="<?= $fetch_contents['embedded_map']; ?>">
       <span>update property Amenities</span>
-      <input type="text" name="property_amenities" required class="box" maxlength="100" placeholder="enter Property Amenities" value="<?= $fetch_contents['property_amenities']; ?>">
+      <input type="text" name="property_amenities"  class="box" maxlength="100" placeholder="enter Property Amenities" value="<?= $fetch_contents['property_amenities']; ?>">
       <span>update Room_types</span>
-      <input type="text" name="room_types" required class="box" maxlength="100" placeholder="enter Room Features" value="<?= $fetch_contents['room_types']; ?>">
+      <input type="text" name="room_types"  class="box" maxlength="100" placeholder="enter Room Features" value="<?= $fetch_contents['room_types']; ?>">
       <span>update room features</span>
-      <input type="text" name="room_features" required class="box" maxlength="100" placeholder="enter Room Types" value="<?= $fetch_contents['room_features']; ?>">
+      <input type="text" name="room_features"  class="box" maxlength="100" placeholder="enter Room Types" value="<?= $fetch_contents['room_features']; ?>">
       <span>update image 01</span>
       <input type="file" name="img1" accept="image/jpg, image/jpeg, image/png, image/webp" class="box">
       <span>update image 02</span>

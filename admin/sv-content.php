@@ -252,8 +252,8 @@ if(isset($_GET['delete'])){
       <div class="name"><?= $fetch_contents['place_name']; ?></div>
       <div class="details"><span><?= $fetch_contents['details']; ?></span></div>
       <div class="flex-btn">
-         <a href="sv-content.php?update=<?= $fetch_contents['id']; ?>" class="option-btn">update</a>
-         <a href="wg-content.php?delete=<?= $fetch_contents['id']; ?>" class="delete-btn" onclick="return confirm('delete this content?');">delete</a>
+         <a href="sv-update.php?update=<?= $fetch_contents['id']; ?>" class="option-btn">update</a>
+         <a href="sv-content.php?delete=<?= $fetch_contents['id']; ?>" class="delete-btn" onclick="return confirm('delete this content?');">delete</a>
       </div>
    </div>
    <?php
