@@ -41,7 +41,7 @@ include 'components/connect.php';
         <div class="row">
             <div class="img_container">
                 <div class="main_image">
-                <img src="img/tourist/<?= $fetch_places['img1']; ?>" id="main_img">
+                    <img src="img/tourist/<?= $fetch_places['img1']; ?>" id="main_img">
                 </div>
                 <div class="sub_image" id="sub_img">
                 <img src="img/tourist/<?= $fetch_places['img1']; ?>" onclick="subImg1()" id="sub1">

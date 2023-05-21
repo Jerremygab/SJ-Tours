@@ -53,11 +53,11 @@ include 'components/connect.php';
         </div>
         <div class="plan_grid">
             <div class="plan_container_box">
-                <a href="travel-information.php">
+                <a href="events.php">
                     <div class="plan_container_img">
-                        <i class='bx bxs-car icons_'></i>
+                        <i class='bx bxs-calendar-event icons_'></i>
                     </div>
-                    <h5>Travel Guidelines</h5>
+                    <h5>Upcoming Events</h5>
                 </a>
             </div>
             <div class="plan_container_box">

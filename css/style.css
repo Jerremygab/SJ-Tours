@@ -2,7 +2,7 @@
 @import url('https://unpkg.com/boxicons@latest/css/boxicons.min.css');
 @import url('https://unicons.iconscout.com/release/v4.0.8/css/line.css');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
-
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;1,200;1,800&family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rowdies:wght@300;700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root{
     /*========== Colors ==========*/
     --primary-color:#043263;
@@ -139,6 +139,7 @@ textarea {
 .d-none{
     display: none;
 }
+
 
 /* ============================== */
 
@@ -925,7 +926,36 @@ table td{
     gap: 0.5rem;
 }
 
+/* ============================================= */
 
+/* EVENTS */
+.events_contents{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 1rem;
+}
+.list_content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    background: var(--modal-color);
+    box-shadow: -1px 6px 40px 0px rgba(0,0,0,0.10);
+    border-radius: 5px;
+
+}
+.list_content img{
+    width: 100%;
+    max-height: 250px ;
+    border-radius: 5px;
+}
+.events_list p{
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    
+}
 
 /* ============================================= */
 
@@ -1054,6 +1084,9 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
     .contact_details p {
         font-size: var(--small-font-size);
     }
+    .events_contents{
+        grid-template-columns: repeat(1,1fr);
+    }
 }
 @media screen and (min-width: 414px) {
     .similar_places .exp_img_box img {
@@ -1101,7 +1134,9 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
 /* 780 x 658 */
 @media screen and (min-width: 768px) {
     
-    
+    .events_contents{
+        grid-template-columns: repeat(2,1fr);
+    }
     .plan_grid {
         grid-template-columns: repeat(6, 1fr);
         align-items: normal;
@@ -1205,6 +1240,9 @@ input[type='text'],[type='number'], [type='email'], select, textarea {
     }
     #seemore_sort{
         width: 15%;
+    }
+    .events_contents{
+        grid-template-columns: repeat(3,1fr);
     }
 
 }

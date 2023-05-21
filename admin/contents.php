@@ -62,6 +62,10 @@ if(!isset($admin_id)){
          <h3>Souvenirs</h3>
          <a href="sv-content.php" class="btn">Manage</a>
       </div>
+      <div class="box">
+         <h3>Upcoming Events</h3>
+         <a href="events-content.php" class="btn">Manage</a>
+      </div>
 
    </div>
 
