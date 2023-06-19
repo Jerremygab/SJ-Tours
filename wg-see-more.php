@@ -81,7 +81,7 @@ include 'components/connect.php';
                         <div class="right_side">
 
                             <p><?= $fetch_places['details'] ?></p><br>
-                            <div class="details">Rate starts at: <br><b>PHP <?= $fetch_places['rate']; ?>.00</b></div>
+                            <div class="details">Rate starts at: <br><b>PHP <?= $fetch_places['rate']; ?>.00</b>/Night</div>
                             <div class="details">
                                 Total views:
                                 <p id="display_weekend_gateaway_<?= $fetch_places['id']; ?>"><?= $fetch_places['views']; ?> <i class="uil uil-eye icons_"></i></p> 
@@ -90,10 +90,17 @@ include 'components/connect.php';
                                 <button id="<?= $fetch_places['id']; ?>" tbl="weekend_gateaway" button class="visit_btn">Details</button>
                             </a>
                             <div class="tag_container">
-                                <div class="tag_content">
-                                    <i class='bx bxs-purchase-tag icons_'></i>
-                                    <p>Budget Friendly</p>
-                                </div>
+
+                                <?php 
+                                    $budget = 7000;
+                                    if($budget > $fetch_places['rate']){
+                                        echo '<div class="tag_content">';
+                                        echo '<i class="bx bxs-purchase-tag icons_"></i>';
+                                        echo '<p>Budget Friendly</p>';
+                                        echo '</div>';
+                                    }
+                                ?>
+
                                 <div class="tag_content">
                                     <i class='bx bxs-star icons_'></i>
                                     <p>Highly Recommended</p>

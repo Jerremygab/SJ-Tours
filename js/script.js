@@ -78,6 +78,7 @@ function removeAllChildNodes(parent) {
   }
 }
 
+
 // const defaultSort = document.querySelector('#default').value;
 // const mostViewed = document.querySelector('#viewed').value;
 // const lowestPrice = document.querySelector('#lowest').value;
