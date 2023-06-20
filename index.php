@@ -135,8 +135,8 @@ include 'components/connect.php';
                             <div class="exp_links">
                                 <a href="<?= $fetch_places['fb_link']; ?>" target="_blank"><i class='bx bxl-facebook-circle icons_'></i></a>
                                 <a href="<?= $fetch_places['web_link']; ?>" target="_blank"><i class='bx bx-globe icons_'></i></a>
-                                <i class='bx bxs-envelope icons_' data-toggle="modal" data-target="#myModal"></i>
-                                <i class='bx bxs-phone icons_' data-toggle="modal" data-target="#myModal"></i>
+                                <a href="wg-quickview.php?pid=<?= $fetch_places['id']; ?>#contact" target="_blank"><i class='bx bxs-envelope icons_'></i></a>
+                                <a href="wg-quickview.php?pid=<?= $fetch_places['id']; ?>#contact" target="_blank"><i class='bx bxs-phone icons_'></i></a>
                                 <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
                             </div>
                             <div class="view_count">
@@ -145,28 +145,7 @@ include 'components/connect.php';
                             </div>
                         </div>
 
-                        <!-- <div class="modal fade" id="myModal" role="dialog">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Get In Touch</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p><b>Email us at:</b></p>
-                                        <p><?= $fetch_places['gmail_link1']; ?></p>
-                                        <p><?= $fetch_places['gmail_link2']; ?></p>
-                                        <hr>
-                                        <p><b>Call us at:</b></p>
-                                        <p><?= $fetch_places['phone_link1']; ?></p>
-                                        <p><?= $fetch_places['phone_link2']; ?></p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
+                        
 
                     </div>
                     <?php
@@ -202,8 +181,8 @@ include 'components/connect.php';
                             <div class="exp_links">
                                 <a href="<?= $fetch_places['fb_link']; ?>" target="_blank"><i class='bx bxl-facebook-circle icons_'></i></a>
                                 <a href="<?= $fetch_places['web_link']; ?>" target="_blank"><i class='bx bx-globe icons_'></i></a>
-                                <!-- <a href="<?= $fetch_places['gmail_link']; ?>" target="_blank"><i class='bx bxs-envelope icons_'></i></a> -->
-                                <!-- <a href="<?= $fetch_places['phone_link']; ?>" target="_blank"><i class='bx bxs-phone icons_'></i></a> -->
+                                <a href="gs-quickview.php?pid=<?= $fetch_places['id']; ?>#contact" target="_blank"><i class='bx bxs-envelope icons_'></i></a>
+                                <a href="gs-quickview.php?pid=<?= $fetch_places['id']; ?>#contact" target="_blank"><i class='bx bxs-phone icons_'></i></a>
                                 <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
                             </div>
                             <div class="view_count">
@@ -245,8 +224,8 @@ include 'components/connect.php';
                             <div class="exp_links">
                                 <a href="<?= $fetch_places['fb_link']; ?>" target="_blank"><i class='bx bxl-facebook-circle icons_'></i></a>
                                 <a href="<?= $fetch_places['web_link']; ?>" target="_blank"><i class='bx bx-globe icons_'></i></a>
-                                <!-- <a href="<?= $fetch_places['gmail_link']; ?>" target="_blank"><i class='bx bxs-envelope icons_'></i></a> -->
-                                <!-- <a href="<?= $fetch_places['phone_link']; ?>" target="_blank"><i class='bx bxs-phone icons_'></i></a> -->
+                                <a href="at-quickview.php?pid=<?= $fetch_places['id']; ?>#contact" target="_blank"><i class='bx bxs-envelope icons_'></i></a>
+                                <a href="at-quickview.php?pid=<?= $fetch_places['id']; ?>#contact" target="_blank"><i class='bx bxs-phone icons_'></i></a>
                                 <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
                             </div>
                             <div></div>
@@ -289,8 +268,8 @@ include 'components/connect.php';
                             <div class="exp_links">
                                 <a href="<?= $fetch_places['fb_link']; ?>" target="_blank"><i class='bx bxl-facebook-circle icons_'></i></a>
                                 <a href="<?= $fetch_places['web_link']; ?>" target="_blank"><i class='bx bx-globe icons_'></i></a>
-                                <!-- <a href="<?= $fetch_places['gmail_link']; ?>" target="_blank"><i class='bx bxs-envelope icons_'></i></a> -->
-                                <!-- <a href="<?= $fetch_places['phone_link']; ?>" target="_blank"><i class='bx bxs-phone icons_'></i></a> -->
+                                <a href="sv-quickview.php?pid=<?= $fetch_places['id']; ?>#contact" target="_blank"><i class='bx bxs-envelope icons_'></i></a>
+                                <a href="sv-quickview.php?pid=<?= $fetch_places['id']; ?>#contact" target="_blank"><i class='bx bxs-phone icons_'></i></a>
                                 <a href="<?= $fetch_places['map_link']; ?>" target="_blank"><i class='bx bxs-map icons_'></i></a>
                             </div>
                             <div class="view_count">

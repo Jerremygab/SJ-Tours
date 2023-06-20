@@ -37,7 +37,7 @@ if(!isset($admin_id)){
       <br>
       <br>
       <br>
-   <h1 class="heading">ADMIN PANEL</h1>
+   <h1 class="heading">ALL CONTENTS</h1>
       <br>
       <br>
       <br>

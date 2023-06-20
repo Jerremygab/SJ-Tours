@@ -93,7 +93,7 @@ include 'components/connect.php';
 
                                 <?php 
                                     $budget = 7000;
-                                    if($budget > $fetch_places['rate']){
+                                    if($budget >= $fetch_places['rate']){
                                         echo '<div class="tag_content">';
                                         echo '<i class="bx bxs-purchase-tag icons_"></i>';
                                         echo '<p>Budget Friendly</p>';
