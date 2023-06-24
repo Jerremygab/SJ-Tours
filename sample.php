@@ -50,7 +50,7 @@ $places_names = $weekend_gateway_places->fetchAll(PDO::FETCH_DEFAULT);
             if($select_places->rowCount() > 0):
                 while( $fetch_place = $select_places->fetch(PDO::FETCH_ASSOC)):
         ?>
-            <?php if():?>
+            <?php if(''):?>
                 <tr>
                     <td>1</td>
                     <td>2</td>
