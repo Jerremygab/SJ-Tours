@@ -500,7 +500,7 @@ function updateMorrisBar(columnNumber) {
     case 2:
       for (var index in newJSON.data) {
         newJSON.data[index].a = tableDataJson.data[index]["FTEs"];
-      }
+      }``
       newJSON.labels = ['FTEs'];
       break;
     case 3:

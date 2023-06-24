@@ -85,17 +85,6 @@ if(isset($_POST['add_content'])){
       $insert_contents = $conn->prepare("INSERT INTO `weekend_gateaway`(place_name, location, details, rate, fb_link, ig_link, web_link, gmail_link1, gmail_link2, phone_link1, phone_link2, map_link, embedded_map, property_amenities, room_features, room_types, img1, img2, img3, img4, img5) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
       $insert_contents->execute([$name, $location, $details, $price, $fb_link, $ig_link, $web_link, $gmail_link1, $gmail_link2, $phone_link1, $phone_link2, $map_link, $embedded_map, $property_amenities, $room_features, $room_types, $image_01, $image_02, $image_03, $image_04, $image_05]);
       $message[] = 'New Contents added!';
-      /* if($insert_contents){
-         if($image_size_01 > 2000000 OR $image_size_02 > 2000000 OR $image_size_03 > 2000000 OR $image_size_04 > 2000000 OR $image_size_05 > 2000000){
-            $message[] = 'Image size is too large!';
-         }else{
-            move_uploaded_file($image_tmp_name_01, $image_folder_01);
-            move_uploaded_file($image_tmp_name_02, $image_folder_02);
-            move_uploaded_file($image_tmp_name_03, $image_folder_03);
-            $message[] = 'New Contents added!';
-         }
-
-      } */
 
    }  
 

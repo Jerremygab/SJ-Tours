@@ -28,13 +28,13 @@ include 'components/connect.php';
 <br>
 <section class="quick_view section" id="quick-view" >
 
-<?php
+    <?php
      $pid = $_GET['pid'];
      $select_places = $conn->prepare("SELECT * FROM  `weekend_gateaway` WHERE id = ?"); 
      $select_places->execute([$pid]);
      if($select_places->rowCount() > 0){
       while($fetch_places = $select_places->fetch(PDO::FETCH_ASSOC)){
-   ?>
+    ?>
 
    <div class="form">
       <h1 class="title_">Featured Photos</h1>
@@ -90,6 +90,13 @@ include 'components/connect.php';
       <div id="contact">
         <?php include 'contact.php'; ?>
       </div>
+      <div id="reviews">
+        <div class="title_">Reviews</div>
+        <?php include 'reviews.php'; ?>
+      </div>
+
+
+      
       <div class="similar_places">
             <div class="title_">Similar Places</div>
             <br>
