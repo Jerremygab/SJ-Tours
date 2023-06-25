@@ -712,6 +712,47 @@ iframe{
 .form .exp_container{
     padding: 0;
 }
+
+.review_container{
+    background-color: var(--bg-color);
+}
+
+.review_contents{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.review_header{
+    display: flex;
+    gap: 1rem;
+}
+.review_header img{
+    width: 50px;
+    border-radius: 50%;
+}
+.review_header-det{
+    display: flex;
+    flex-direction: column;
+}
+.review_header-det p{
+    font-size: 10px;
+}
+.review_img{
+    display: flex;
+    gap: .5rem;
+}
+.review_img img{
+    width: 33%;
+}
+
+.add-review_container{
+    background-color: var(--bg-color);
+    width: 350px;
+    border-radius: 5px;
+}
+.review_body .rates{
+    color: gold;
+}
 /* ============================================= */
 
 /* SIMILAR PLACES */

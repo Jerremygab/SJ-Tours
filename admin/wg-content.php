@@ -84,7 +84,20 @@ if(isset($_POST['add_content'])){
 
       $insert_contents = $conn->prepare("INSERT INTO `weekend_gateaway`(place_name, location, details, rate, fb_link, ig_link, web_link, gmail_link1, gmail_link2, phone_link1, phone_link2, map_link, embedded_map, property_amenities, room_features, room_types, img1, img2, img3, img4, img5) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
       $insert_contents->execute([$name, $location, $details, $price, $fb_link, $ig_link, $web_link, $gmail_link1, $gmail_link2, $phone_link1, $phone_link2, $map_link, $embedded_map, $property_amenities, $room_features, $room_types, $image_01, $image_02, $image_03, $image_04, $image_05]);
-      $message[] = 'New Contents added!';
+      
+
+      if($insert_contents){
+         if($image_size_01 > 5000000 OR $image_size_02 > 5000000 OR $image_size_03 > 5000000 OR $image_size_04 > 5000000 OR $image_size_05 > 5000000){
+            $message[] = 'Image size is too large!';
+         }else{
+            move_uploaded_file($image_tmp_name_01, $image_folder_01);
+            move_uploaded_file($image_tmp_name_02, $image_folder_02);
+            move_uploaded_file($image_tmp_name_03, $image_folder_03);
+            move_uploaded_file($image_tmp_name_04, $image_folder_04);
+            move_uploaded_file($image_tmp_name_05, $image_folder_05);
+            $message[] = 'New Content added!';
+         }
+      }
 
    }  
 
@@ -103,7 +116,7 @@ if(isset($_GET['delete'])){
    unlink('../img/tourist/'.$fetch_delete_image['img5']);
    $delete_content = $conn->prepare("DELETE FROM `weekend_gateaway` WHERE id = ?");
    $delete_content->execute([$delete_id]);
-   header("Location: /sjtours");
+   header("Location: /sjtours/admin/wg-content.php");
 }
 
 
@@ -149,7 +162,7 @@ if(isset($_GET['delete'])){
          </div>
          <div class="inputBox">
             <span>FB Link  </span>
-            <input type="text" class="box" required maxlength="500" placeholder="Enter FB Link" name="fb_link">
+            <input type="text" class="box"  maxlength="500" placeholder="Enter FB Link" name="fb_link">
          </div>
          <div class="inputBox">
             <span>IG Link  </span>
@@ -161,7 +174,7 @@ if(isset($_GET['delete'])){
          </div>
          <div class="inputBox">
             <span>Gmail 1 </span>
-            <input type="text" class="box" required maxlength="500" placeholder="Enter Gmail 1" name="gmail_link1">
+            <input type="text" class="box"  maxlength="500" placeholder="Enter Gmail 1" name="gmail_link1">
          </div>
          <div class="inputBox">
             <span>Gmail 2  </span>
@@ -169,7 +182,7 @@ if(isset($_GET['delete'])){
          </div>
          <div class="inputBox">
             <span>Phone Number 1  </span>
-            <input type="text" class="box" required maxlength="12" placeholder="Enter Phone Number 1" name="phone_link1">
+            <input type="text" class="box"  maxlength="12" placeholder="Enter Phone Number 1" name="phone_link1">
          </div>
          <div class="inputBox">
             <span>Phone Number 2  </span>
@@ -201,19 +214,19 @@ if(isset($_GET['delete'])){
         </div>
         <div class="inputBox">
             <span>Image 02  </span>
-            <input type="file" name="img2" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" required>
+            <input type="file" name="img2" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" >
         </div>
         <div class="inputBox">
             <span>Image 03  </span>
-            <input type="file" name="img3" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" required>
+            <input type="file" name="img3" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" >
         </div>
         <div class="inputBox">
             <span>Image 04  </span>
-            <input type="file" name="img4" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" required>
+            <input type="file" name="img4" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" >
         </div>
         <div class="inputBox">
             <span>Image 05 </span>
-            <input type="file" name="img5" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" required>
+            <input type="file" name="img5" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" >
         </div>
          
       </div>

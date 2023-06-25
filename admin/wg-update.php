@@ -50,7 +50,7 @@ if(isset($_POST['update'])){
                                                                    web_link = ?, gmail_link1 = ?, gmail_link2 = ?, phone_link1 = ?, phone_link2 = ?, map_link = ?, 
                                                                    embedded_map = ?, property_amenities = ?, room_features = ?, room_types = ?
                                                                    WHERE id = ?");
-   $update_content->execute([$name, $price, $details,$location,$fb_link,$ig_link,$web_link,$gmail_link1,$gmail_link2,$phone_link2, $map_link,$embedded_map,$property_amenities, $room_features,$room_types, $pid]);
+   $update_content->execute([$name, $price, $details,$location,$fb_link,$ig_link,$web_link,$gmail_link1,$gmail_link2,$phone_link1, $phone_link2,$map_link,$embedded_map,$property_amenities, $room_features,$room_types, $pid]);
 
    $message[] = 'Content updated successfully!';
 
@@ -111,41 +111,41 @@ if(isset($_POST['update'])){
       }
    }
 
-   $old_image_03 = $_POST['old_image_03'];
-   $image_03 = $_FILES['img4']['name'];
-   $image_03 = filter_var($image_03, FILTER_SANITIZE_STRING);
-   $image_size_03 = $_FILES['img4']['size'];
-   $image_tmp_name_03 = $_FILES['img4']['tmp_name'];
-   $image_folder_03 = '../img/tourist/'.$image_03;
+   $old_image_04 = $_POST['old_image_04'];
+   $image_04 = $_FILES['img4']['name'];
+   $image_04 = filter_var($image_03, FILTER_SANITIZE_STRING);
+   $image_size_04 = $_FILES['img4']['size'];
+   $image_tmp_name_04 = $_FILES['img4']['tmp_name'];
+   $image_folder_04 = '../img/tourist/'.$image_04;
 
-   if(!empty($image_03)){
-      if($image_size_03 > 2000000){
+   if(!empty($image_04)){
+      if($image_size_04 > 2000000){
          $message[] = 'image size is too large!';
       }else{
-         $update_image_03 = $conn->prepare("UPDATE `weekend_gateaway` SET img4 = ? WHERE id = ?");
-         $update_image_03->execute([$image_03, $pid]);
-         move_uploaded_file($image_tmp_name_03, $image_folder_03);
-         unlink('../img/tourist/'.$old_image_03);
-         $message[] = 'image 03 updated successfully!';
+         $update_image_04 = $conn->prepare("UPDATE `weekend_gateaway` SET img4 = ? WHERE id = ?");
+         $update_image_04->execute([$image_04, $pid]);
+         move_uploaded_file($image_tmp_name_04, $image_folder_04);
+         unlink('../img/tourist/'.$old_image_04);
+         $message[] = 'image 04 updated successfully!';
       }
    }
 
-   $old_image_03 = $_POST['old_image_03'];
-   $image_03 = $_FILES['img5']['name'];
-   $image_03 = filter_var($image_03, FILTER_SANITIZE_STRING);
-   $image_size_03 = $_FILES['img5']['size'];
-   $image_tmp_name_03 = $_FILES['img5']['tmp_name'];
-   $image_folder_03 = '../img/tourist/'.$image_03;
+   $old_image_05 = $_POST['old_image_05'];
+   $image_05 = $_FILES['img5']['name'];
+   $image_05 = filter_var($image_05, FILTER_SANITIZE_STRING);
+   $image_size_05 = $_FILES['img5']['size'];
+   $image_tmp_name_05 = $_FILES['img5']['tmp_name'];
+   $image_folder_05 = '../img/tourist/'.$image_05;
 
-   if(!empty($image_03)){
-      if($image_size_03 > 2000000){
+   if(!empty($image_05)){
+      if($image_size_05 > 2000000){
          $message[] = 'image size is too large!';
       }else{
-         $update_image_03 = $conn->prepare("UPDATE `weekend_gateaway` SET img5 = ? WHERE id = ?");
-         $update_image_03->execute([$image_03, $pid]);
-         move_uploaded_file($image_tmp_name_03, $image_folder_03);
-         unlink('../img/tourist/'.$old_image_03);
-         $message[] = 'image 03 updated successfully!';
+         $update_image_05 = $conn->prepare("UPDATE `weekend_gateaway` SET img5 = ? WHERE id = ?");
+         $update_image_05->execute([$image_05, $pid]);
+         move_uploaded_file($image_tmp_name_05, $image_folder_05);
+         unlink('../img/tourist/'.$old_image_05);
+         $message[] = 'image 05 updated successfully!';
       }
    }
 
@@ -186,6 +186,8 @@ if(isset($_POST['update'])){
       <input type="hidden" name="old_image_01" value="<?= $fetch_contents['img1']; ?>">
       <input type="hidden" name="old_image_02" value="<?= $fetch_contents['img2']; ?>">
       <input type="hidden" name="old_image_03" value="<?= $fetch_contents['img3']; ?>">
+      <input type="hidden" name="old_image_04" value="<?= $fetch_contents['img4']; ?>">
+      <input type="hidden" name="old_image_05" value="<?= $fetch_contents['img5']; ?>">
       <div class="image-container">
          <div class="main-image">
             <img src="../img/tourist/<?= $fetch_contents['img1']; ?>" alt="">
