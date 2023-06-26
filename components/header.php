@@ -26,6 +26,9 @@
                 <a href="maps.php">Contact Us</a>
             </li>
             <li>
+                <a href="https://www.sanjuanbatangas.gov.ph/" target="_blank">LGU Website</a>
+            </li>
+            <li>
                 <a href="search.php">search</a>
             </li>
         </ul>

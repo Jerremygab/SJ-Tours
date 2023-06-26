@@ -88,22 +88,13 @@ if(isset($_POST['submit'])){
                   </div>
 
                   <div class="d-none">
-                    <?php
-                      $pid = $_GET['pid'];
-                      $select_places = $conn->prepare("SELECT * FROM  `weekend_gateaway` WHERE id = ?"); 
-                      $select_places->execute([$pid]);
-                      if($select_places->rowCount() > 0){
-                        while($fetch_places = $select_places->fetch(PDO::FETCH_ASSOC)){
-                    ?>
+                    
                     
                     <textarea name="place_name" cols="30" rows="5"><?= $fetch_places['place_name']; ?></textarea>
                     <textarea name="place_id" cols="30" rows="5"><?= $fetch_places['id']; ?></textarea>
                     <textarea name="date" cols="30" rows="5"><?php $currentDate = date('Y-m-d'); echo $currentDate; ?></textarea>
                   </div>
-                    <?php
-                        }
-                      }
-                    ?>
+                    
 
                   <?php
                   if(isset($_POST['submit'])){

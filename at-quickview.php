@@ -89,6 +89,10 @@ include 'components/connect.php';
       <div id="contact">
         <?php include 'contact.php'; ?>
       </div>
+      <div id="reviews">
+        <div class="title_">Reviews</div>
+        <?php include 'at-reviews.php'; ?>
+      </div>
       <div class="exp_container">
             <div class="title_">Similar Places</div>
             <br>

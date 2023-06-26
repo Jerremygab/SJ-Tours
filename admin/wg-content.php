@@ -64,13 +64,13 @@ if(isset($_POST['add_content'])){
    $image_folder_03 = '../img/tourist/'.$image_03;
 
    $image_04 = $_FILES['img4']['name'];
-   $image_04 = filter_var($image_03, FILTER_SANITIZE_STRING);
+   $image_04 = filter_var($image_04, FILTER_SANITIZE_STRING);
    $image_size_04 = $_FILES['img4']['size'];
    $image_tmp_name_04 = $_FILES['img4']['tmp_name'];
    $image_folder_04 = '../img/tourist/'.$image_04;
 
    $image_05 = $_FILES['img5']['name'];
-   $image_05 = filter_var($image_03, FILTER_SANITIZE_STRING);
+   $image_05 = filter_var($image_05, FILTER_SANITIZE_STRING);
    $image_size_05 = $_FILES['img5']['size'];
    $image_tmp_name_05 = $_FILES['img5']['tmp_name'];
    $image_folder_05 = '../img/tourist/'.$image_05;
@@ -158,7 +158,7 @@ if(isset($_GET['delete'])){
          </div>
          <div class="inputBox">
             <span>Description  </span>
-            <textarea placeholder="Enter Description" class="box" required maxlength="500" cols="30" rows="10" name="details"></textarea>
+            <textarea placeholder="Enter Description" class="box" required maxlength="1000" cols="30" rows="10" name="details"></textarea>
          </div>
          <div class="inputBox">
             <span>FB Link  </span>

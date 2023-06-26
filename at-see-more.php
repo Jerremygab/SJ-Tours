@@ -22,7 +22,7 @@ include 'components/connect.php';
     <br><br>
     <section class="section see-more" >
         <div class="seemore_container container">
-            <div class="title_">Gastronomic experience</div>
+            <div class="title_">Cultural And Attractions</div>
            <!--  <div class="dropdown">
                 <div class="options">
                       

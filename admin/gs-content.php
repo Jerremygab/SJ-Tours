@@ -64,25 +64,25 @@ if(isset($_POST['add_content'])){
    $image_folder_03 = '../img/tourist/'.$image_03;
 
    $image_04 = $_FILES['img4']['name'];
-   $image_04 = filter_var($image_03, FILTER_SANITIZE_STRING);
+   $image_04 = filter_var($image_04, FILTER_SANITIZE_STRING);
    $image_size_04 = $_FILES['img4']['size'];
    $image_tmp_name_04 = $_FILES['img4']['tmp_name'];
    $image_folder_04 = '../img/tourist/'.$image_04;
 
    $image_05 = $_FILES['img5']['name'];
-   $image_05 = filter_var($image_03, FILTER_SANITIZE_STRING);
+   $image_05 = filter_var($image_05, FILTER_SANITIZE_STRING);
    $image_size_05 = $_FILES['img5']['size'];
    $image_tmp_name_05 = $_FILES['img5']['tmp_name'];
    $image_folder_05 = '../img/tourist/'.$image_05;
 
-   $select_contents = $conn->prepare("SELECT * FROM `attractions` WHERE place_name = ?");
+   $select_contents = $conn->prepare("SELECT * FROM `gastronomic_exp` WHERE place_name = ?");
    $select_contents->execute([$name]);
 
    if($select_contents->rowCount() > 0){
       $message[] = 'content name already exist!';
    }else{
 
-      $insert_contents = $conn->prepare("INSERT INTO `attractions`(place_name, location, details, rate, fb_link, ig_link, web_link, gmail_link1, gmail_link2, phone_link1, phone_link2, map_link, embedded_map, property_amenities, room_features, room_types, img1, img2, img3, img4, img5) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+      $insert_contents = $conn->prepare("INSERT INTO `gastronomic_exp`(place_name, location, details, rate, fb_link, ig_link, web_link, gmail_link1, gmail_link2, phone_link1, phone_link2, map_link, embedded_map, property_amenities, room_features, room_types, img1, img2, img3, img4, img5) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
       $insert_contents->execute([$name, $location, $details, $price, $fb_link, $ig_link, $web_link, $gmail_link1, $gmail_link2, $phone_link1, $phone_link2, $map_link, $embedded_map, $property_amenities, $room_features, $room_types, $image_01, $image_02, $image_03, $image_04, $image_05]);
       if($insert_contents){
          if($image_size_01 > 5000000 OR $image_size_02 > 5000000 OR $image_size_03 > 5000000 OR $image_size_04 > 5000000 OR $image_size_05 > 5000000){

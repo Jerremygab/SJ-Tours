@@ -11,49 +11,25 @@ if(isset($_POST['add_review'])){
    $msg = $_POST['message'];
    $ratings = $_POST['ratings'];
 
-   $image_01 = $_FILES['files']['name'];
-   $image_01 = filter_var($image_01, FILTER_SANITIZE_STRING);
-   $image_size_01 = $_FILES['files']['size'];
-   $image_tmp_name_01 = $_FILES['files']['tmp_name'];
-   $image_folder_01 = 'img/reviews/'.$image_01;
-   
-   $image_02 = $_FILES['files2']['name'];
-   $image_02 = filter_var($image_02, FILTER_SANITIZE_STRING);
-   $image_size_02 = $_FILES['files2']['size'];
-   $image_tmp_name_02 = $_FILES['files2']['tmp_name'];
-   $image_folder_02 = 'img/reviews/'.$image_02;
 
-   $image_03 = $_FILES['files3']['name'];
-   $image_03 = filter_var($image_03, FILTER_SANITIZE_STRING);
-   $image_size_03 = $_FILES['files3']['size'];
-   $image_tmp_name_03 = $_FILES['files3']['tmp_name'];
-   $image_folder_03 = 'img/reviews/'.$image_03;
 
-   $select_message = $conn->prepare("SELECT * FROM `reviews` WHERE place_id = ? AND place_name = ? AND date = ? AND fullname = ? AND message = ? AND ratings = ? AND image1 = ? AND image2 = ? AND image3 = ?");
-   $select_message->execute([$pid, $placename, $date, $name, $msg, $ratings, $image_01, $image_02, $image_03]);
+   $select_message = $conn->prepare("SELECT * FROM `reviews` WHERE place_id = ? AND place_name = ? AND date = ? AND fullname = ? AND message = ? AND ratings = ?");
+   $select_message->execute([$pid, $placename, $date, $name, $msg, $ratings]);
 
    if($select_message->rowCount() > 0){
       $message[] = 'Review Sent!';
    }else{
 
-      $insert_message = $conn->prepare("INSERT INTO reviews (place_id, place_name, date, fullname, message, ratings, image1, image2, image3) VALUES(?,?,?,?,?,?,?,?,?)");
-      $insert_message->execute([$pid, $placename, $date, $name, $msg, $ratings,$image_01, $image_02, $image_03]);
-      if($insert_message){
-        if($image_size_01 > 5000000 OR  $image_size_02 > 5000000 OR $image_size_03 > 5000000){
-           $message[] = 'Image size is too large!';
-        }else{
-           move_uploaded_file($image_tmp_name_01, $image_folder_01);
-           move_uploaded_file($image_tmp_name_02, $image_folder_02);
-           move_uploaded_file($image_tmp_name_03, $image_folder_03);
-           $message[] = 'New reviews added!';
-        }
-     }
+      $insert_message = $conn->prepare("INSERT INTO `reviews`(place_id, place_name, date, fullname, message, ratings) VALUES(?,?,?,?,?,?)");
+      $insert_message->execute([$pid, $placename, $date, $name, $msg, $ratings]);
+      $message[] = 'Review sent';
 
    }
+
 }
 
-
 ?>
+
 
 <div class="review_" id="review">
          <div class="events_container container">
@@ -135,9 +111,9 @@ if(isset($_POST['add_review'])){
                       <p><?= $fetch_places['message']; ?></p>
                     </div>
                     <div class="review_img">
-                      <img src="img/reviews/<?= $fetch_places['image1']; ?>" alt="">
-                      <img src="img/reviews/<?= $fetch_places['image2']; ?>" alt="">
-                      <img src="img/reviews/<?= $fetch_places['image3']; ?>" alt="">
+                      <img src="img/reviews/<?= $fetch_places['img1']; ?>">
+                      <img src="img/reviews/<?= $fetch_places['img2']; ?>">
+                      <img src="img/reviews/<?= $fetch_places['img3']; ?>">
                     </div>
                   </div>
                 </div>
@@ -150,15 +126,14 @@ if(isset($_POST['add_review'])){
                 }
                 ?>
             </div>
-            <br>
-            <button class="rev-btn" onclick="addReview()">Add Review</button>
+            <button onclick="addReview()">Add Review</button>
         </div>
          
          <div class="add-review_container add-review_grid d-none" id="add-review">
             <div></div>
             <div class="add-review_content row_">
                
-               <form action="#" method="post" id="review_form" enctype="multipart/form-data">
+               <form action="#" method="post" id="review_form">
                <h4>Share your experience</h4>
                <br>
                   <div class="fullname">
@@ -168,14 +143,12 @@ if(isset($_POST['add_review'])){
                     <textarea name="message" placeholder="Write your experience" id="message_input" cols="30" rows="5" required></textarea>
                   </div>
                   <div class="message">
-                    <input type="file" name="files" accept="image/jpg, image/jpeg, image/png, image/webp" class="box">
-                    <input type="file" name="files2" accept="image/jpg, image/jpeg, image/png, image/webp" class="box">
-                    <input type="file" name="files3" accept="image/jpg, image/jpeg, image/png, image/webp" class="box">
+                    <input type="file" name="img1" accept="image/jpg, image/jpeg, image/png, image/webp" class="box">
                   </div>
                   <br>
                   <div class="rates">
                     <p>How's your experience?</p>
-                      <input type="radio" value="5" name="ratings" required> 5 - Excellent </input><br>
+                      <input type="radio" value="5" name="ratings"> 5 - Excellent </input><br>
                       <input type="radio" value="4" name="ratings"> 4 - Great</input><br>
                       <input type="radio" value="3" name="ratings"> 3 - Good</input><br>
                       <input type="radio" value="2" name="ratings"> 2 - Bad</input><br>
@@ -184,7 +157,7 @@ if(isset($_POST['add_review'])){
                   <div class="d-none">
                     <?php
                       $pid = $_GET['pid'];
-                      $select_places = $conn->prepare("SELECT * FROM  `weekend_gateaway` WHERE id = ?"); 
+                      $select_places = $conn->prepare("SELECT * FROM  `attractions` WHERE id = ?"); 
                       $select_places->execute([$pid]);
                       if($select_places->rowCount() > 0){
                         while($fetch_places = $select_places->fetch(PDO::FETCH_ASSOC)){

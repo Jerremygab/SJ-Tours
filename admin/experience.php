@@ -12,7 +12,7 @@ if(!isset($admin_id)){
 
 if(isset($_GET['delete'])){
    $delete_id = $_GET['delete'];
-   $delete_message = $conn->prepare("DELETE FROM `contact_form` WHERE id = ?");
+   $delete_message = $conn->prepare("DELETE FROM `reviews` WHERE id = ?");
    $delete_message->execute([$delete_id]);
    header('location:experience.php');
 }

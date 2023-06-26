@@ -753,6 +753,15 @@ iframe{
 .review_body .rates{
     color: gold;
 }
+.rev-btn{
+    padding: 8px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    color: var(--bg-color);
+    border: none;
+    display: flex;
+    margin: auto;
+}
 /* ============================================= */
 
 /* SIMILAR PLACES */

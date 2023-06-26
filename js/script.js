@@ -56,10 +56,8 @@ function subImg5(){
   });
 
   function messageSent(){
-    alert('Thank you for contacting us!');
   }
   function reviewSent(){
-    alert('Thank you for sharing us your experience!');
     let element = document.getElementById("add-review");
     element.classList.add("d-none");
   }
