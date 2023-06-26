@@ -12,8 +12,8 @@ if(!isset($admin_id)){
 
 if(isset($_GET['delete'])){
    $delete_id = $_GET['delete'];
-   $delete_message = $conn->prepare("DELETE FROM `reviews` WHERE id = ?");
-   $delete_message->execute([$delete_id]);
+   $delete_ratings = $conn->prepare("DELETE FROM `reviews` WHERE id = ?");
+   $delete_ratings->execute([$delete_id]);
    header('location:experience.php');
 }
 
@@ -43,19 +43,22 @@ if(isset($_GET['delete'])){
 <div class="box-container">
 
    <?php
-      $select_messages = $conn->prepare("SELECT * FROM `reviews`");
-      $select_messages->execute();
-      if($select_messages->rowCount() > 0){
-         while($fetch_message = $select_messages->fetch(PDO::FETCH_ASSOC)){
+      $select_ratings = $conn->prepare("SELECT * FROM `reviews`");
+      $select_ratings->execute();
+      if($select_ratings->rowCount() > 0){
+         while($fetch_ratings = $select_ratings->fetch(PDO::FETCH_ASSOC)){
    ?>
    <div class="box">
    
-      <p><b><?= $fetch_message['place_name']; ?></b></p>
-      <p> Date : <span><?= $fetch_message['date']; ?></span></p>
-      <p> Fullname : <span><?= $fetch_message['fullname']; ?></span></p>
-      <p> Subject : <span><?= $fetch_message['subject']; ?></span></p>
-      <p> Message : <span><?= $fetch_message['message']; ?></span></p>
-      <a href="experience.php?delete=<?= $fetch_message['id']; ?>" onclick="return confirm('delete this message?');" class="delete-btn">delete</a>
+      <p><b><?= $fetch_ratings['place_name']; ?></b></p>
+      <p> Date : <span><?= $fetch_ratings['date']; ?></span></p>
+      <p> Fullname : <span><?= $fetch_ratings['fullname']; ?></span></p>
+      <p> Message : <span><?= $fetch_ratings['message']; ?></span></p>
+      <p> Images : </p>
+      <img src="../img/reviews/<?= $fetch_places['image1']; ?>" alt="asd">
+      <img src="../img/reviews/<?= $fetch_places['image2']; ?>" alt="ds">
+      <img src="../img/reviews/<?= $fetch_places['image3']; ?>" alt="asdd">
+      <a href="experience.php?delete=<?= $fetch_ratings['id']; ?>" onclick="return confirm('delete this ratings?');" class="delete-btn">delete</a>
    </div>
    <?php
          }

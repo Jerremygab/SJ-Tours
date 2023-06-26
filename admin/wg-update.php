@@ -113,7 +113,7 @@ if(isset($_POST['update'])){
 
    $old_image_04 = $_POST['old_image_04'];
    $image_04 = $_FILES['img4']['name'];
-   $image_04 = filter_var($image_03, FILTER_SANITIZE_STRING);
+   $image_04 = filter_var($image_04, FILTER_SANITIZE_STRING);
    $image_size_04 = $_FILES['img4']['size'];
    $image_tmp_name_04 = $_FILES['img4']['tmp_name'];
    $image_folder_04 = '../img/tourist/'.$image_04;

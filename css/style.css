@@ -743,6 +743,7 @@ iframe{
 }
 .review_img img{
     width: 33%;
+    height: 100px;
 }
 
 .add-review_container{
