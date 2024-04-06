@@ -135,9 +135,27 @@ if(isset($_POST['add_review'])){
                       <p><?= $fetch_places['message']; ?></p>
                     </div>
                     <div class="review_img">
-                      <img src="img/reviews/<?= $fetch_places['image1']; ?>" alt="">
-                      <img src="img/reviews/<?= $fetch_places['image2']; ?>" alt="">
+                      <?php 
+                      if (!empty($fetch_places['image1'])) {
+                        echo "<img src='img/reviews/" . $fetch_places['image1'] . "'>";
+                      }else {
+                        echo '<img src="img/reviews/dummy.png">';
+                      }
+                      if (!empty($fetch_places['image2'])) {
+                        echo "<img src='img/reviews/" . $fetch_places['image1'] . "'>";
+                      }else {
+                        echo '<img src="img/reviews/dummy.png">';
+                      }
+                      if (!empty($fetch_places['image3'])) {
+                        echo "<img src='img/reviews/" . $fetch_places['image1'] . "'>";
+                      }else {
+                        echo '<img src="img/reviews/dummy.png">';
+                      }
+                      ?>
+                      
+                      <!-- <img src="img/reviews/<?= $fetch_places['image2']; ?>" alt="">
                       <img src="img/reviews/<?= $fetch_places['image3']; ?>" alt="">
+                       -->
                     </div>
                   </div>
                 </div>

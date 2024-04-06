@@ -86,6 +86,7 @@ b{
     font-size: var(--normal-font-size);
     font-weight: var(--font-semi-bold);
 }
+
 hr  {
     margin: 2rem auto;
     border: none;
@@ -819,6 +820,7 @@ iframe{
 }
 
 .testimonials_btn{
+    color: white;
     padding: .8rem;
     background-color: var(--secondary-color);
     width: fit-content;
@@ -837,6 +839,7 @@ iframe{
     color: var(--bg-color);
     margin: auto;
 }
+
 
 .testimonials_content .ratings{
     color: gold;
